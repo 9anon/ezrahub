@@ -23,7 +23,7 @@ Ezra Hub's main implementation is on [ezrahub.com](http://ezrahub.com) and is ca
 The current version of Ezra Hub is 0.9b. Ezra Hub is currently a BETA release. We acknowledge that not everything fully works, and there may be bugs.
 
 ### How to Install
-**Please note: we do not currently have an option to set up the necessary MySQL database table structure, which means users will be unable to replicate Ezra Hub at this time.** First, install a base version of [Laravel 3](http://laravel.com) (NOT version 4!) on your server and configure it to connect successfully with MySQL and to use `mod_rewrite`.
+**Please note: we do not currently have any way for you to replicate the MySQL table structure that Ezra Hub depends on, which means users will be unable to replicate Ezra Hub at this time.** First, install a base version of [Laravel 3](http://laravel.com) (NOT version 4!) on your server and configure it to connect successfully with MySQL and to use `mod_rewrite`.
 
 Install the bundles:
 - authority
@@ -32,7 +32,7 @@ Install the bundles:
 - sluggable
 - reaptcha
 
-Then, copy over the files in this repository over your Laravel 3 install directory and reset Laravel's cache. Ezra Hub should be good to go!*
+Then, copy the files in this repository over your Laravel 3 install directory and reset Laravel's cache. Ezra Hub should be good to go!*
 
 
 ### License
