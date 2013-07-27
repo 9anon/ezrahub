@@ -154,7 +154,7 @@ header {
     line-height: @header-height;
     background: #ce0a31;
     color: #eee;
-    font-size: 12px;
+    font-size: 13px;
     position: relative;
     z-index: +4;
 
@@ -296,15 +296,9 @@ div#threads-navigation {
                     color: #aaa !important;
                 }
 
-                span.number-highlight {
-                    display: block;
-                    font-size: 20px;
-                    color: #91c3f5;
-                }
-
                 span.reputation {
                     display: block;
-                    font-size: 12px;
+                    font-size: 13px;
                     margin: 5px 0 0 0;
 
                     span.rep-icon {
@@ -1541,7 +1535,7 @@ footer {
     width: 100%;
     height: @footer-height;
     padding: 10px 18px 10px @sidebar-width + 18px;
-    font-size: 14px;
+    font-size: 13px;
     color: #eee;
     background: #31353e;
     text-transform: lowercase;
@@ -1583,7 +1577,7 @@ footer {
 
     .footer-lobster {
         font-family: 'Lobster';
-        font-size: 20px;
+        font-size: 18px;
         margin-right: 8px;
     }
 }
