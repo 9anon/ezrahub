@@ -43,7 +43,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href ="http://wnajar.github.io/ezrahub" class="browse-option github">
+                            <a target="_blank" href ="https://github.com/wnajar/ezrahub" class="browse-option github">
                                 <span class="icon-left icon-github"></span>
                             </a>
                         </li>

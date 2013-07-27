@@ -1541,7 +1541,7 @@ footer {
     width: 100%;
     height: @footer-height;
     padding: 10px 18px 10px @sidebar-width + 18px;
-    font-size: 12px;
+    font-size: 14px;
     color: #eee;
     background: #31353e;
     text-transform: lowercase;
@@ -1583,7 +1583,7 @@ footer {
 
     .footer-lobster {
         font-family: 'Lobster';
-        font-size: 18px;
+        font-size: 20px;
         margin-right: 8px;
     }
 }

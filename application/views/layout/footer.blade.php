@@ -8,6 +8,6 @@
     </div>
     <div class="footer-col right">
         <h5 class="footer-lobster">et cetera:</h5>
-        <p>&copy; 2011-2013 <span class="ezra-hub">Ezra Hub</span> version {{ Config::get('ezrahub.version_number') }} | If you have a question, email us at <a href="mailto:{{ Config::get('ezrahub.admin_email') }}">{{ Config::get('ezrahub.admin_email') }}</a> | <span class="ezra-hub">Ezra Hub</span> is <strong>not</strong> an official or endorsed publication of <a target="_blank" href="http://cornell.edu">Cornell University</a>. | Please take everything you see on this website with a grain of salt.</p>
+        <p>&copy; 2011-2013 <span class="ezra-hub">Ezra Hub</span> version {{ Config::get('ezrahub.version_number') }} | Find us on <a target-"blank" href="https://github.com/wnajar/ezrahub"><span class="icon-github"></span> GitHub</a>  |  If you have a question, email us at <a href="mailto:{{ Config::get('ezrahub.admin_email') }}">{{ Config::get('ezrahub.admin_email') }}</a> | <span class="ezra-hub">Ezra Hub</span> is <strong>not</strong> an official or endorsed publication of <a target="_blank" href="http://cornell.edu">Cornell University</a>.</p>
     </div>
 </footer>
