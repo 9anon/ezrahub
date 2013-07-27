@@ -43,8 +43,8 @@ application/config/application.php
 application/config/auth.php
 laravel
 storage
+bundles
 .travis.yml
 artisan
 paths.php
 .htaccess
-bundles
