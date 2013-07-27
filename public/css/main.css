@@ -154,7 +154,6 @@ header {
     line-height: @header-height;
     background: #ce0a31;
     color: #eee;
-    text-transform: lowercase;
     font-size: 12px;
     position: relative;
     z-index: +4;

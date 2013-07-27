@@ -43,8 +43,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href ="/faq/" class="browse-option faq">
-                                <span class="icon-left icon-book"></span> FAQ
+                            <a href ="http://wnajar.github.io/ezrahub" class="browse-option github">
+                                <span class="icon-left icon-github"></span>
                             </a>
                         </li>
                         <li>
