@@ -17,6 +17,9 @@ Ezra Hub is a clean, modern, Ajax-enabled and feature-rich forum that builds upo
 - Bumplocking
 - Thread and post search
 
+## Status
+Ezra Hub is currently a BETA release. We acknowledge that not everything fully works, and there may be bugs.
+
 ## License
 
 Ezra Hub is licensed under the GPLv2. See the included LICENSE file.
