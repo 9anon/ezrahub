@@ -1,4 +1,4 @@
-# [Ezra Hub](http://ezrahub.com) - a forum for Cornell University students.
+## [Ezra Hub](http://ezrahub.com) - a forum for Cornell University students.
 
 Ezra Hub is a clean, modern, Ajax-enabled and feature-rich forum that builds upon past forum software and does things the right way. Where past forum software has failed, Ezra Hub succeeds. Ezra hub is built from the ground up on top of the Laravel 3 framework and borrows nothing from other clunky forum software.
 
