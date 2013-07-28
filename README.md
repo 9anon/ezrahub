@@ -14,7 +14,8 @@ Ezra Hub's main implementation is on [ezrahub.com](http://ezrahub.com) and is ca
 - Robust reputation system similar to that seen on the [bodybuilding.com forums](http://forum.bodybuilding.com/faq.php?faq=repuationsystem_faq)
 - User-to-user private messaging
 - Spam-protection features for anonymous posters
-- Ezra-Hub-flavored [BBCode](http://en.wikipedia.org/wiki/BBCode) post markup
+- Ezra-Hub-flavored [BBCode](http://en.wikipedia.org/wiki/BBCode) post markup w/ click-to-insert
+- YouTube video embedding
 - Post-quoting
 - Stickying threads
 - Locking threads
