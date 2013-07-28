@@ -24,7 +24,7 @@
                         <span class='rating'></span>
                     </span>
                     <span class='rating-item'>
-                        <span id='stats'><span class="icon-dashboard"><span></span>
+                        <span id='stats'><span class="icon-dashboard"></span></span>
                         <span class='stats-rating'></span>
                     </span>
                 </div>

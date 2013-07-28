@@ -55,7 +55,7 @@ html, body {
 }
 
 body {
-    min-width: 1165px;
+    min-width: 1200px;
     margin: 0px;
     padding: 0px;
     background: #fff;
@@ -1214,6 +1214,7 @@ div.progress-display {
     .border-sizing;
 }
 span.rating-item {
+    display: inline-block;
     margin: 0;
     padding: 0 10px 0 0;
 }
