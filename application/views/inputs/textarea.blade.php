@@ -22,5 +22,5 @@
         </div>
     </div>
     {{ Form::label('post-body', 'Body:'); }}
-    {{ Form::textarea('post-body', null, array('placeholder' => 'Type out a masterpiece...', 'class' => 'enhanced')); }}
+    {{ Form::textarea('post-body', null, array('placeholder' => 'Start writing here...', 'class' => 'enhanced')); }}
 </div>

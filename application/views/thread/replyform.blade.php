@@ -32,9 +32,8 @@
                 </div>
             </div>
             <p class="errors"></p>
-            @include('inputs.placeholders')
             {{ Form::label('post-body', 'Body:'); }}
-            {{ Form::textarea('post-body', null, array('placeholder' => fill_placeholder(), 'class' => 'enhanced')); }}
+            {{ Form::textarea('post-body', null, array('placeholder' => 'Start writing here...', 'class' => 'enhanced')); }}
         </div>
         {{ Form::honeypot('date', 'date_time') }}
         <div class="clear both"></div>
