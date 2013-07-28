@@ -232,7 +232,7 @@ nav.user-nav {
     float: right;
 }
 
-@sidebar-width: 60px;
+@sidebar-width: 55px;
 
 div#threads-navigation {
     .border-sizing;
