@@ -28,7 +28,11 @@ Ezra Hub's main implementation is on [ezrahub.com](http://ezrahub.com) and is ca
 The current version of Ezra Hub is 0.9b. Ezra Hub is currently a BETA release. We acknowledge that not everything fully works, and there may be bugs.
 
 ### How to Install
-First, install a base version of [Laravel 3](http://laravel.com) (** NOT ** version 4!) on your server and configure it to connect successfully with the MySQL database of your choosing, and to use `mod_rewrite` for URL rewriting. Documentation to set up Laravel 3 can be found at [http://three.laravel.com/docs](http://three.laravel.com/docs).
+Ezra Hub is relatively simple to install for an administrator with average skills.
+
+1. Clone the [Laravel 3](https://github.com/laravel/laravel/tree/v3.2.14) repository from GitHub onto your server and install/configure it so it is working. Excellent documentation to set up and configure Laravel 3 can be found at [http://three.laravel.com/docs](http://three.laravel.com/docs). You must configure your installation to use `mod_rewrite` and don't forget to make the appropriate changes in `application/config/application.php` to match your environment, including setting an application key and setting the index option to an empty string.
+
+2. Extend Laravel's HTML module by
 
 Next, install the following Laravel bundles via the `artisan` command-line tool:
 - authority

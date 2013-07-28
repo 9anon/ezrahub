@@ -1,6 +1,63 @@
 <?php
 
 class BBCode {
+
+    /**
+     * Generate an strong element.
+     *
+     * @access  public
+     * @param   string  $data
+     * @return  string
+     */
+    public static function strong($data) {
+        return '<strong>' . $data . '</strong>';
+    }
+
+    /**
+     * Generate an em element.
+     *
+     * @access  public
+     * @param   string  $data
+     * @return  string
+     */
+    public static function em($data) {
+        return '<em>' . $data . '</em>';
+    }
+
+    /**
+     * Generate an blockquote element.
+     *
+     * @access  public
+     * @param   string  $data
+     * @return  string
+     */
+    public static function quote($data) {
+        return '<blockquote><p>' . $data . '</p></blockquote>';
+    }
+
+    /**
+     * Generate an del (strikethrough) element.
+     *
+     * @access  public
+     * @param   string  $data
+     * @return  string
+     */
+    public static function del($data) {
+        return '<del>' . $data . '</del>';
+    }
+
+    /**
+     * Generate an iframe element.
+     *
+     * @access  public
+     * @param   string  $url
+     * @param   array   $attributes
+     * @return  string
+     */
+    public static function iframe($url, $attributes = array()) {
+        return '<iframe src="' . $url . '"' . static::attributes($attributes) . '></iframe>';
+    }
+
     /**
      * Parse text and replace with relevant BBCode
      *
@@ -11,22 +68,22 @@ class BBCode {
     public static function parse($data) {
         // Replace [b]...[/b] with <strong>...</strong>
         $matches["/\[b\](.*?)\[\/b\]/is"] = function($match) {
-            return HTML::strong($match[1]);
+            return BBCode::strong($match[1]);
         };
 
         // Replace [i]...[/i] with <em>...</em>
         $matches["/\[i\](.*?)\[\/i\]/is"] = function($match) {
-            return HTML::em($match[1]);
+            return BBCode::em($match[1]);
         };
 
         // Replace [quote]...[/quote] with <blockquote><p>...</p></blockquote>
         $matches["/\[quote\](.*?)\[\/quote\]/is"] = function($match) {
-            return HTML::quote($match[1]);
+            return BBCode::quote($match[1]);
         };
 
         // Replace [quote="person"]...[/quote] with <blockquote><p>...</p></blockquote>
         $matches["/\[quote=\"([^\"]+)\"\](.*?)\[\/quote\]/is"] = function($match) {
-            return HTML::quote('<span class="quoted-user">' . $match[1] . '</span> wrote: ' . $match[2]);
+            return BBCode::quote('<span class="quoted-user">' . $match[1] . '</span> wrote: ' . $match[2]);
         };
 
         // Replace [h]...[/h] with <h5>...</h5>
@@ -36,7 +93,7 @@ class BBCode {
 
         // Replace [s] with <del>
         $matches["/\[s\](.*?)\[\/s\]/is"] = function($match) {
-            return HTML::del($match[1]);
+            return BBCode::del($match[1]);
         };
 
         // Replace [url]...[/url] with <a href="...">...</a>
@@ -58,7 +115,7 @@ class BBCode {
 
         // Replace [youtube]...[/youtube] with <iframe src="..."></iframe>
         $matches["/\[youtube\]([A-Z0-9\-_]+)(?:&(.*?))?\[\/youtube\]/i"] = function($match) {
-            return HTML::iframe('http://www.youtube-nocookie.com/embed/' . $match[1], array(
+            return BBCode::iframe('http://www.youtube-nocookie.com/embed/' . $match[1], array(
                 'class'         => 'youtube-player',
                 'type'          => 'text/html',
                 'width'         => 560,
