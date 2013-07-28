@@ -1461,13 +1461,13 @@ div.rep-neg {
     }
 }
 
-@footer-height: 115px;
+@footer-height: 45px;
 
 footer {
     .border-sizing;
     width: 100%;
     height: @footer-height;
-    padding: 10px 18px 10px @sidebar-width + 18px;
+    padding: 0 18px 0 @sidebar-width + 18px;
     font-size: 13px;
     color: #eee;
     background: #31353e;
@@ -1475,19 +1475,15 @@ footer {
     z-index: +1;
 
     .footer-col {
+        height: @footer-height;
         display: inline-block;
         .border-sizing;
     }
 
-    .footer-col.right {
-        width: 45%;
-        float: right;
-        padding: 0 0 0 25px;
-    }
-
     .footer-col.main {
-        width: 55%;
+        width: 100%;
         float: left;
+        line-height: @footer-height;
         padding: 0 25px 0 0;
     }
 
@@ -1500,18 +1496,9 @@ footer {
     }
 
     p {
+        height: @footer-height;
         text-transform: none;
         margin: 0;
-    }
-
-    h5 {
-        margin: 0 0 5px 0;
-    }
-
-    .footer-lobster {
-        font-family: 'Lobster';
-        font-size: 18px;
-        margin-right: 8px;
     }
 }
 
