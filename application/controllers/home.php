@@ -17,7 +17,7 @@ class Home_Controller extends Base_Controller {
     public function action_scroll() {
 
         $iteration = (int) Input::get('iteration');
-        $new_threads = Thread::order_by('updated_at', 'desc')->skip(Config::get('ezrahub.num_homepage_threads') + 15 * $iteration)->take(15)->get();
+        $new_threads = Thread::order_by('updated_at', 'desc')->skip(Config::get('ezrahub.num_homepage_threads') + 15 * $iteration)->where('sticky', '<>', '1')->take(15)->get();
         return Response::json(array('threads_html' => View::make('home.threads', array('threads' => $new_threads))->render()));
     }
 
