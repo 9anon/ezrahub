@@ -41,11 +41,11 @@ The current version of Ezra Hub is 0.9b. Ezra Hub is currently a **BETA** releas
 ### How to Install
 Ezra Hub is quick and simple to install for the average technically-oriented administrator. For non-technical users, your mileage may vary. Most of the difficulty comes in installing and configuring Laravel and not in setting up Ezra Hub.
 
-1. Create a new table on your MySQL server and import the `ezrahub.sql` SQL dump (located in the root of this repo) into a MySQL database of your choosing using a tool like phpMyAdmin.
-2. Clone the [Laravel 3 branch from the Laravel repository on GitHub](https://github.com/laravel/laravel/tree/3.0) onto your server and carefully follow the documentation found at [http://three.laravel.com/docs](http://three.laravel.com/docs) to install/configure it so it is working with the database you created in Step 1. Follow the optional documentation to configure your installation to use URL rewriting with `mod_rewrite` and don't forget to make the appropriate changes in `application/config/application.php` which include setting the index option to an empty string.
+1. Create a new table on your MySQL server and import the `ezrahub.sql` SQL dump (located in the root of this repo) into a MySQL database of your choosing.
+2. Clone the [Laravel 3 branch from the Laravel repository on GitHub](https://github.com/laravel/laravel/tree/3.0) onto your server and carefully follow the documentation found at [http://three.laravel.com/docs](http://three.laravel.com/docs) to install/configure Laravel with the table you created in Step 1. Follow the optional documentation to configure your installation to use `mod_rewrite` and don't forget to make the appropriate changes in `application/config/application.php`.
 3. Verify that your Laravel installation is working by navigating to your install in a web browser.
 4. Clone this repository to a separate folder and then copy all of the files over your Laravel 3 install directory 1:1, overwriting the files already there.
-5. Navigate to your Ezra Hub install, verify it is working, and sign up as a new user. **The first user you create will become the admin user**, as the SQL dump includes a row giving the user with ID = 1 an administrative role.
+5. Navigate to your Ezra Hub install in a web browserand sign up as a new user. **The first user you create will become the admin user**.
 
 ### Configuration
 Simple, easy-to-edit configuration variables for Ezra Hub are located in `application/config/ezrahub.php`. If you want to configure anything else, you'll be editing code.
