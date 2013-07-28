@@ -7,47 +7,38 @@ Ezra Hub's main implementation is on [ezrahub.com](http://ezrahub.com) and is ca
 ### Feature Overview
 
 - Infinite-scrolling threads view on homepage
+- Fully Ajax-enabled and near-real-time thread/index updating
+- Configurable variables in an easy-to-edit configuration file
 - Anonymous posting w/ restrictions
-- Optional user accounts w/ extra features
+- User accounts w/ extra features and functionality
 - Option for logged-in users to post anonymously
-- Robust reputation system
-- User-to-user Messaging
-- Fully Ajax-enabled and near real-time
+- Robust reputation system similar to that seen on the [bodybuilding.com forums](http://forum.bodybuilding.com/faq.php?faq=repuationsystem_faq)
+- User-to-user private messaging
 - Spam-beating features for anonymous posters
+- Ezra-Hub-flavored [BBCode](http://en.wikipedia.org/wiki/BBCode) post markup
 - Post-quoting
-- Ezra-Hub-flavored BBcode post formatting
 - Stickying threads
 - Locking threads
 - Bumplocking threads
 - Banning users and IP addresses
 - User profile pages
 - Thread and post search
-- Real-time post and thread statistics + SMOG index rating
+- Real-time post and thread statistics + [SMOG](http://en.wikipedia.org/wiki/SMOG) index rating
 
 ### Current Version and Status
+
 The current version of Ezra Hub is 0.9b. Ezra Hub is currently a BETA release. We acknowledge that not everything fully works, and there may be bugs.
 
 ### How to Install
+
 Ezra Hub is relatively simple to install for an administrator with average skills.
 
-1. Clone the [Laravel 3](https://github.com/laravel/laravel/tree/v3.2.14) repository from GitHub onto your server and install/configure it so it is working. Excellent documentation to set up and configure Laravel 3 can be found at [http://three.laravel.com/docs](http://three.laravel.com/docs). You must configure your installation to use `mod_rewrite` and don't forget to make the appropriate changes in `application/config/application.php` to match your environment, including setting an application key and setting the index option to an empty string.
-
-2. Extend Laravel's HTML module by
-
-Next, install the following Laravel bundles via the `artisan` command-line tool:
-- authority
-- honeypot
-- resizer
-- sluggable
-- recaptcha
-
-Consulting `/application/bundles.php` for reference if needed (where each bundle is registered).
-
-Then, copy the files in this repository over your Laravel 3 install directory, overwriting the files already there.
-
-Lastly, import the `ezrahub.sql` SQL file in the root directory into the database you created in the first step, and Ezra Hub should be good to go!
-
+1. Clone the [Laravel 3](https://github.com/laravel/laravel/tree/v3.2.14) repository from GitHub onto your server and install/configure it so it is working. **Make sure not to install Laravel 4**, as it is not fully compatible. Excellent documentation to install/configure Laravel 3 can be found at [http://three.laravel.com/docs](http://three.laravel.com/docs). For the database setup, Ezra Hub is configured to use `MySQL`, so fill out that section in `application/config/database.php`. Follow the directions to configure your installation to use `mod_rewrite`, and and don't forget to make the appropriate changes in `application/config/application.php` which include setting the index option to an empty string.
+2. Copy all of the files in this repository over your Laravel 3 install directory, overwriting the files already there.
+3. Import the `ezrahub.sql` SQL dump using a tool like phpMyAdmin into the database you created in the first step, and all the tables will be created for you with the appropriate structure.
+4. Navigate to your Ezra Hub install and sign up. **The first user you create will become the admin user**, as the SQL dump includes a row giving the user with ID = 1 an administrative role.
+5. Start using Ezra Hub and let us know how it goes!
 
 ### License
 
-Ezra Hub is licensed under the GPLv2. See the included LICENSE file.
+Ezra Hub is licensed under the GPLv2. Laravel 3 is licensed under the Apache license. See the included LICENSE file.
