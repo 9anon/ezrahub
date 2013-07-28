@@ -8,7 +8,7 @@
         </div>
         <div class='textarea-container'>
             <div class='textarea-formatting'>
-                Write a masterpiece of a thread:
+                Write a masterpiece:
                 <span title='bold' data-action='bold' class='format-icon icon-bold'></span>
                 <span title='italic' data-action='italic' class='format-icon icon-italic'></span>
                 <span title='heading' data-action='heading' class='format-icon icon-exclamation'></span>
@@ -20,17 +20,17 @@
                 <span title='strikethrough' data-action='strikethrough' class='format-icon strikethrough icon-strikethrough'></span>
                 <div class='progress-display'>
                     <span class='rating-item'>
-                        <span id='final-count'>0</span> <span class='noun'>words</span> typed,
+                        <span id='final-count'>0</span> <span class='noun'>words</span>:
                         <span class='rating'></span>
                     </span>
                     <span class='rating-item'>
-                        <span id='stats'>Intelligence:</span>
+                        <span id='stats'><span class="icon-dashboard"><span></span>
                         <span class='stats-rating'></span>
                     </span>
                 </div>
                 <div class="submit-container">
                     @if (Auth::check())
-                        <span class="become-anon">Anonymous: {{ Form::checkbox('becomeanon', 'value', false) }}</span>
+                        <span class="become-anon">Anon: {{ Form::checkbox('becomeanon', 'value', false) }}</span>
                     @endif
                     {{ Form::submit('Post a new thread', array('id' => 'post-new-thread')); }}
                 </div>

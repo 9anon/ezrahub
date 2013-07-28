@@ -1190,7 +1190,7 @@ div.textarea-formatting {
 }
 
 .format-icon:first-child {
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .format-icon {
@@ -1200,7 +1200,7 @@ div.textarea-formatting {
     height: 40px !important;
     cursor: pointer;
     margin: 0;
-    padding: 0 25px 0 0;
+    padding: 0 15px 0 0;
 }
 
 div.info-bar {
@@ -1215,7 +1215,7 @@ div.progress-display {
 }
 span.rating-item {
     margin: 0;
-    padding: 0 10px;
+    padding: 0 10px 0 0;
 }
 span.stats-rating {
     display: inline-block;
@@ -1223,6 +1223,7 @@ span.stats-rating {
     text-align: left;
 }
 #stats {
+    display: none;
     margin-right: 5px;
 }
 
@@ -1459,7 +1460,7 @@ div.rep-neg {
 input#post-new-reply, input#post-new-thread {
     height: 41px;
     width: 275px;
-    margin: 0 0 0 15px;
+    margin: 0 0 0 10px;
 }
 
 div.submit-container {

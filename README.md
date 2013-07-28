@@ -6,17 +6,21 @@ Ezra Hub's main implementation is on [ezrahub.com](http://ezrahub.com) and is ca
 
 ### Feature Overview
 
-- Infinite-scrolling threads on homepage
+- Infinite-scrolling threads view on homepage
 - Anonymous posting w/ restrictions
 - Optional user accounts w/ extra features
+- Option for logged-in users to post anonymously
 - Robust reputation system
-- Messaging
-- Fully Ajax-enabled
+- User-to-user Messaging
+- Fully Ajax-enabled and near real-time
 - Spam-beating features for anonymous posters
 - Post-quoting
-- Stickying
-- Locking
-- Bumplocking
+- Ezra-Hub-flavored BBcode post formatting
+- Stickying threads
+- Locking threads
+- Bumplocking threads
+- Banning users and IP addresses
+- User profile pages
 - Thread and post search
 
 ### Current Version and Status

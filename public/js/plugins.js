@@ -124,7 +124,7 @@ var bbcode = {
 //on document ready
 $(document).ready(function () {
     // initialize the rating
-    $('span.rating').html('start typing to begin...');
+    $('span.rating').html('start typing...');
     //initialize arrays and objects
     var wordcount = {};
 
@@ -239,14 +239,15 @@ function report_score(statisticsobject) {
     }
     //apply changes to the form is there was an intelligence change
     if ($('span.stats-rating').html() != intelligence) {
-        $('span.stats-rating').html(intelligence).css('color', color).hide().fadeIn('125');
+        $('span.stats-rating').html(intelligence).css('color', color);
+        $('span#stats').show();
     }
 }
 
 // function to update the progress bar and rating
 function update_rating(spanclass, content, color) {
     if ($('span.rating').html() != '<span class="' + spanclass + '">' + content + '</span>') {
-        $('span.rating').html('<span class="' + spanclass + '">' + content + '</span>').css('color', color).hide().fadeIn('125');
+        $('span.rating').html('<span class="' + spanclass + '">' + content + '</span>').css('color', color);
     }
 }
 
