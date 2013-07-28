@@ -1,7 +1,38 @@
 <div class="new-reply-container">
     <div id="new-reply" <?php if (!Auth::check()) { echo 'class="anon-coward"'; } ?>>
         {{ Form::open('post/new/' .  $thread->id, 'POST', array('id' => 'new-reply-form')); }}
-        @include('inputs.textarea')
+        <div class='textarea-container'>
+            <div class='textarea-formatting'>
+                Write a reply to this thread:
+                <span title='bold' data-action='bold' class='format-icon icon-bold'></span>
+                <span title='italic' data-action='italic' class='format-icon icon-italic'></span>
+                <span title='heading' data-action='heading' class='format-icon icon-exclamation'></span>
+                <span title='link' data-action='link' class='format-icon link icon-link'></span>
+                <span title='image' data-action='image' class='format-icon image icon-camera'></span>
+                <span title='youtube' data-action='youtube' class='format-icon youtube icon-youtube-play'></span>
+                <span title='quote' data-action='quote' class='format-icon quote icon-quote-right'></span>
+                <span title='list' data-action='list' class='format-icon list icon-list-ul'></span>
+                <span title='strikethrough' data-action='strikethrough' class='format-icon strikethrough icon-strikethrough'></span>
+                <div class='progress-display'>
+                    <span class='rating-item'>
+                        <span id='final-count'>0</span> <span class='noun'>words</span> typed,
+                        <span class='rating'></span>
+                    </span>
+                    <span class='rating-item'>
+                        <span id='stats'>Intelligence:</span>
+                        <span class='stats-rating'></span>
+                    </span>
+                </div>
+                <div id="submit-container">
+                    <span class="no-bump">Nope:</span> {{ Form::checkbox('nobump', 'value', false) }}
+                    {{ Form::submit('Post a new reply to this thread', array('id' => 'post-new-reply')); }}
+                </div>
+            </div>
+            <p class="errors"></p>
+            @include('inputs.placeholders')
+            {{ Form::label('post-body', 'Body:'); }}
+            {{ Form::textarea('post-body', null, array('placeholder' => fill_placeholder(), 'class' => 'enhanced')); }}
+        </div>
         {{ Form::honeypot('date', 'date_time') }}
         <div class="clear both"></div>
         @if (!Auth::check())
@@ -27,17 +58,6 @@
                 </noscript>
             </div>
         @endif
-        <p class="errors"></p>
-        <div class="submit-container">
-            <div class="submit-item no-bump">
-                <span class="no-bump">Nope:</span>
-                {{ Form::checkbox('nobump', 'value', false) }}
-            </div>
-            <div class="submit-item submit-button">
-                {{ Form::submit('Post a new reply to this thread', array('id' => 'post-new-reply')); }}
-            </div>
-            <div class="clear both"></div>
-        </div>
     </div>
        {{ Form::close(); }}
     </div>

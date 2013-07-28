@@ -1067,48 +1067,18 @@ div.form-row {
 }
 
 /* no bump */
-div.submit-container {
-    width: 100%;
-    line-height: 45px;
+div#submit-container {
+    display: inline-block;
+    float: right;
     margin: 0;
-
-    div.submit-item {
-        display: inline-block;
-        float: left;
-        .border-sizing;
-    }
-
-    div.submit-item.no-bump {
-        width: 7%;
-        text-align: center;
-        line-height: 45px;
-        background: #003849;
-        color: #fff;
-
-        span.no-bump {
-            font-size: 14px;
-        }
-
-        input[type="checkbox"] {
-            position: relative;
-            top: 2px;
-        }
-    }
-
-    div.submit-item.submit-button {
-        width: 93%;
-
-        input#post-new-reply {
-            line-height: 45px;
-            padding: 0 !important;
-        }
-    }
 }
 
 p.errors {
     display: none;
-    margin: 10px 0;
+    padding: 8px 15px;
+    margin: 0;
     color: #ff0000 !important;
+    background: rgba(255, 0, 0, 0.08);
 }
 
 p.success {
@@ -1196,10 +1166,10 @@ div.textarea-container {
 
 textarea.enhanced {
     width: 100%;
-    height: 125px;
+    height: 250px;
     /*normalization*/
     margin: 0;
-    padding: 0 5px;
+    padding: 15px;
     font-family: inherit;
     font-size: 100%;
     overflow: auto;
@@ -1212,10 +1182,10 @@ textarea.enhanced {
 div.textarea-formatting {
     .border-sizing;
     margin: 0;
-    padding: 0;
-    background: #f9f9f9;
-    color: #666;
+    padding: 0 0 0 15px;
+    background: #f0f0f0;
     line-height: 40px;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .format-icon:first-child {
@@ -1240,11 +1210,6 @@ div.info-bar {
 
 div.progress-display {
     display: inline-block;
-    line-height: 40px !important;
-    text-align: right;
-    float: right;
-    height: 25px;
-    line-height: 25px;
     vertical-align: middle;
     .border-sizing;
 }
@@ -1269,7 +1234,7 @@ span.rating {
 
 input[type="submit"] {
     .border-sizing;
-    background: #0092bf;
+    background: #59b4cf;
     width: 100%;
     color: #fff;
     font-size: 14px;
@@ -1279,15 +1244,7 @@ input[type="submit"] {
     padding: 10px 20px;
     text-align: center;
     cursor: pointer;
-    .transition(0.1s);
-}
-
-input[type="submit"]:hover {
-    background: #00a5d9;
-}
-
-input[type="submit"]:focus {
-    background: #00b9f2;
+    .transition(0.2s);
 }
 
 /*Avatars*/
@@ -1495,36 +1452,17 @@ div.rep-neg {
 
 /*New Reply*/
 div.new-reply-container {
-    padding: 15px 0 0 0;
-    margin: 0;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #e0e0e0;
 }
 
 #new-reply {
     margin: 0;
-    padding: 0 18px 15px @sidebar-width + 18px;
-    .rounded-corners(2px);
-
-    h4 {
-        font-size: 13px;
-
-        span.icon-edit {
-            font-size: 16px;
-            color: #666;
-            margin-right: 3px;
-            position: relative;
-            top: 2px;
-        }
-    }
-
-    textarea {
-
-    }
+    padding: 0 0px 0px @sidebar-width;
 
     input#post-new-reply {
-        height: 45px !important;
-        line-height: 45px;
-        margin: 0;
+        height: 41px;
+        width: 275px;
+        margin: 0 0 0 15px;
     }
 }
 

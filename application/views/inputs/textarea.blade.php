@@ -1,7 +1,6 @@
 <div class='textarea-container'>
-    {{ Form::label('post-body', 'Body:'); }}
-    {{ Form::textarea('post-body', null, array('placeholder' => 'Type out a masterpiece...', 'class' => 'enhanced')); }}
     <div class='textarea-formatting'>
+        Write a masterpiece:
         <span title='bold' data-action='bold' class='format-icon icon-bold'></span>
         <span title='italic' data-action='italic' class='format-icon icon-italic'></span>
         <span title='heading' data-action='heading' class='format-icon icon-exclamation'></span>
@@ -22,4 +21,6 @@
             </span>
         </div>
     </div>
+    {{ Form::label('post-body', 'Body:'); }}
+    {{ Form::textarea('post-body', null, array('placeholder' => 'Type out a masterpiece...', 'class' => 'enhanced')); }}
 </div>
