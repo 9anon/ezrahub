@@ -1183,9 +1183,9 @@ div.textarea-formatting {
     .border-sizing;
     margin: 0;
     padding: 0 0 0 15px;
-    background: #f0f0f0;
+    background: #333;
+    color: #eee;
     line-height: 40px;
-    border-bottom: 1px solid #e0e0e0;
 }
 
 .format-icon:first-child {
@@ -1198,7 +1198,6 @@ div.textarea-formatting {
     line-height: 40px !important;
     height: 40px !important;
     cursor: pointer;
-    color: #777;
     margin: 0;
     padding: 0 25px 0 0;
 }
@@ -1452,7 +1451,8 @@ div.rep-neg {
 
 /*New Reply*/
 div.new-reply-container {
-    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+
 }
 
 #new-reply {
