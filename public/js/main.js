@@ -116,7 +116,7 @@ $(function() {
 
     //move the footer to the left if there is no sidebar
     if ($('div#threads-navigation').length === 0) {
-        $('footer').css('padding', '10px 18px').css('background', '#31353e url("/css/campuslarge.jpg") no-repeat -1px 0');
+        $('footer').css('padding', '0 15px').css('background', '#31353e');
     }
 
     //show backtotop depending on where we are in the document
