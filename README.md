@@ -24,7 +24,7 @@ Ezra Hub's main implementation is on [ezrahub.com](http://ezrahub.com) and is ca
 - Real-time post and thread statistics + [SMOG](http://en.wikipedia.org/wiki/SMOG) index rating
 
 ### Current Version and Status
-The current version of Ezra Hub is 0.9b. Ezra Hub is currently a BETA release. We acknowledge that not everything fully works, and there may be bugs.
+The current version of Ezra Hub is 0.9b. Ezra Hub is currently a **BETA** release. We acknowledge that not everything fully works, and there may be bugs.
 
 ### How to Install
 Ezra Hub is relatively simple to install for an administrator with average skills.
