@@ -55,7 +55,7 @@ class BBCode {
      * @return  string
      */
     public static function iframe($url, $attributes = array()) {
-        return '<iframe src="' . $url . '"' . static::attributes($attributes) . '></iframe>';
+        return '<iframe src="' . $url . '"' . HTML::attributes($attributes) . '></iframe>';
     }
 
     /**
