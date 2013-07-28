@@ -187,11 +187,7 @@ $(function() {
             $(this).css('background', 'rgba(0, 0, 0, 0.06)').find('span.icon-indicator').css('color', '#999');
         },
         mouseleave: function() {
-            if ($(this).is('div.thread-row:nth-child(2n)')) {
-                $(this).css('background', '#f9f9f9').find('span.icon-indicator').css('color', 'transparent');
-            } else {
-                $(this).css('background', 'transparent').find('span.icon-indicator').css('color', 'transparent');
-            }
+            $(this).css('background', 'transparent').find('span.icon-indicator').css('color', 'transparent');
         }
     }, 'div.thread-row:not(.sticky, .unread, .locked)');
 
