@@ -41,7 +41,7 @@ class BBCode {
 
         // Replace [url]...[/url] with <a href="...">...</a>
         $matches["/\[url\](.*?)\[\/url\]/is"] = function($match) {
-            return HTML::link($match[1], $match[1], array('target' => '_blank', 'rel' => 'nofollow'));
+            return HTML::link($match[1], $match[1], array('target' => '_blank', 'rel' => 'external nofollow'));
         };
 
         // Replace [img]...[/img] with <img src="..."/>
@@ -80,7 +80,7 @@ class BBCode {
         return '<p>' . preg_replace(
                             array("/([\n]{2,})/i", "/([\r\n]{3,})/i", "/([^>])\n([^<])/i"),
                             array("</p>\n<p>", "</p>\n<p>", '$1<br/>$2'),
-                            trim($string))
-                        . '</p>';
+                            trim($string)
+                        ) . '</p>';
     }
 }

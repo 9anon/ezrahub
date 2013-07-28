@@ -8,8 +8,16 @@ class Post_Controller extends Base_Controller {
 
     public function action_new_post($thread_id) {
 
+        //collect the data from the form
+        $input = Input::get();
+
         //get the id of the user, or determine it's a coward
         $user_id = Auth::get_anon_or_user_id();
+
+        //has the user requested to be anonymous?
+        if (isset($input['becomeanon'])) {
+            $user_id = 0;
+        }
 
         //find out which thread we are replying to
         $thread = Thread::find($thread_id);
@@ -17,9 +25,6 @@ class Post_Controller extends Base_Controller {
             //this thread does not exist or we cannot reply to it
             return false;
         }
-
-        //collect the data from the form
-        $input = Input::get();
 
         //validate the input
         if (!Auth::check()) {

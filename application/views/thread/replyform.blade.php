@@ -23,8 +23,11 @@
                         <span class='stats-rating'></span>
                     </span>
                 </div>
-                <div id="submit-container">
-                    <span class="no-bump">Nope:</span> {{ Form::checkbox('nobump', 'value', false) }}
+                <div class="submit-container">
+                    @if (Auth::check())
+                        <span class="become-anon">Anonymous: {{ Form::checkbox('becomeanon', 'value', false) }}</span>
+                    @endif
+                    <span class="no-bump">Nope: {{ Form::checkbox('nobump', 'value', false) }}</span>
                     {{ Form::submit('Post a new reply to this thread', array('id' => 'post-new-reply')); }}
                 </div>
             </div>

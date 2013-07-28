@@ -30,11 +30,16 @@ class Thread_Controller extends Base_Controller {
 
     public function action_new_post() {
 
+        //collect the data from the form
+        $input = Input::get();
+
         //get the id of the user, or determine it's a coward
         $user_id = Auth::get_anon_or_user_id();
 
-        //collect the data from the form
-        $input = Input::get();
+        //has the user requested to be anonymous?
+        if (isset($input['becomeanon'])) {
+            $user_id = 0;
+        }
 
         //validate the input
         if (!Auth::check()) {

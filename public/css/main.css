@@ -902,8 +902,9 @@ div#edit-post {
     margin-left: 55px;
 
     textarea#edited-body {
-        height: 100px;
+        height: 250px;
         border-bottom: none;
+        padding-left: 0;
     }
 
     input#submit-edited-post {
@@ -911,7 +912,7 @@ div#edit-post {
 }
 
 div#locked {
-    padding-left: 0 18px;
+    padding-left: 15px;
     font-size: 14px;
     color: #ff0000;
 }
@@ -1067,7 +1068,7 @@ div.form-row {
 }
 
 /* no bump */
-div#submit-container {
+div.submit-container {
     display: inline-block;
     float: right;
     margin: 0;
@@ -1453,11 +1454,18 @@ div.rep-neg {
 #new-reply {
     margin: 0;
     padding: 0 0px 0px @sidebar-width;
+}
 
-    input#post-new-reply {
-        height: 41px;
-        width: 275px;
-        margin: 0 0 0 15px;
+input#post-new-reply, input#post-new-thread {
+    height: 41px;
+    width: 275px;
+    margin: 0 0 0 15px;
+}
+
+div.submit-container {
+    input[type="checkbox"] {
+        position: relative;
+        top: 2px;
     }
 }
 
@@ -2179,10 +2187,6 @@ p.error {
 input.error {
     background: rgba(255,0,0,0.1);
     border: 1px solid rgba(255,0,0,0.2);
-}
-
-#post-new-thread {
-    padding: 15px 40px;
 }
 
 /*Bans*/

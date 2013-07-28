@@ -238,7 +238,7 @@ $(function() {
     $(document).on('submit', '#new-thread-form', function() {
         //submit the form
         $.post('/thread/new/', $('#new-thread-form').serializeObject(), function(data) {
-            console.log(data);
+            $('span.become-anon input[type="checkbox"]').attr('checked', false);
             if (data.hasOwnProperty('new_thread_url')) {
                 //it worked, redirect to the new thread
                 window.location.replace('/thread/' + data.new_thread_url);
@@ -274,6 +274,7 @@ $(function() {
             if(typeof Recaptcha != 'undefined') {
                Recaptcha.reload();
             }
+            $('span.become-anon input[type="checkbox"], span.no-bump input[type="checkbox"]').attr('checked', false);
             if (data.success == 1) {
                 //no errors, it worked, show success and play a sound (later)
                 $('input#post-new-reply').removeClass('submitted').addClass('success').val('Success.');
@@ -300,7 +301,6 @@ $(function() {
                 //print them out in the error box
                 $('form#new-reply-form p.errors').html('I\'m sorry, Dave, I\'m afraid I can\'t do that. There were some problems with your reply. ' + error_messages.join(' ')).slideDown(400);
             }
-
         }, 'json');
         return false;
     });

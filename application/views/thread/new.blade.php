@@ -28,7 +28,10 @@
                         <span class='stats-rating'></span>
                     </span>
                 </div>
-                <div id="submit-container">
+                <div class="submit-container">
+                    @if (Auth::check())
+                        <span class="become-anon">Anonymous: {{ Form::checkbox('becomeanon', 'value', false) }}</span>
+                    @endif
                     {{ Form::submit('Post a new thread', array('id' => 'post-new-thread')); }}
                 </div>
             </div>
