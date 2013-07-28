@@ -35,7 +35,7 @@ Next, install the following Laravel bundles via the `artisan` command-line tool:
 - honeypot
 - resizer
 - sluggable
-- reaptcha
+- recaptcha
 
 Consulting `/application/bundles.php` for reference if needed (where each bundle is registered).
 
