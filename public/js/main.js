@@ -922,7 +922,4 @@ $(function() {
         }, 'json');
         return false;
     });
-
-    // timepicker
-    $('#expiration-date').appendDtpicker();
 });
