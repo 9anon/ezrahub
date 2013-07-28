@@ -22,6 +22,7 @@ Ezra Hub's main implementation is on [ezrahub.com](http://ezrahub.com) and is ca
 - Banning users and IP addresses
 - User profile pages
 - Thread and post search
+- Real-time post and thread statistics + SMOG index rating
 
 ### Current Version and Status
 The current version of Ezra Hub is 0.9b. Ezra Hub is currently a BETA release. We acknowledge that not everything fully works, and there may be bugs.
