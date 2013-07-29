@@ -105,7 +105,7 @@ span.icon-right {
 
 /*greying out anon coward*/
 .anon-coward span.username {
-    color: #777;
+    color: #555;
     font-weight: normal;
 }
 
@@ -245,7 +245,7 @@ div#threads-navigation {
     top: 0;
     left: 0;
     padding-top: @header-height;
-    background: #252525;
+    background: #111;
     text-align: center;
     z-index: +2;
 
@@ -424,7 +424,7 @@ span.highlight {
 }
 
 #no-sort-header {
-    background: #3c3c3c;
+    background: #032838;
     color: #d0d0d0;
     height: 35px;
     line-height: 35px;
@@ -758,7 +758,7 @@ span.post-ago {
     .border-sizing;
     width: 100%;
     padding-left: 15px;
-    background: #3c3c3c;
+    background: #032838;
     height: 35px;
     line-height: 35px;
     color: #d0d0d0;
@@ -1243,7 +1243,7 @@ span.rating {
 
 input[type="submit"] {
     .border-sizing;
-    background: #59b4cf;
+    background: #00acec;
     width: 100%;
     color: #fff;
     font-size: 14px;
@@ -1655,7 +1655,7 @@ div.image-float-box {
         margin: 0 0 0 275px;
 
         #user-profile-navigation {
-            background: #3c3c3c;
+            background: #032838;
             color: #eee;
 
             nav {
