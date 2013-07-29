@@ -90,7 +90,7 @@ $(function() {
     //wait for 15 seconds until we initialize polling
     setTimeout(function () {
         //decide what we should poll, if anything
-        if ($('#threads').length > 0 && $('#threads').data('poll') == '1') {
+        if ($('#threads').length > 0 && $('#threads').data('poll') == '1' && $('div.search-results-container').length == 0) {
             //we are on the index page and we want to poll
             poll_index();
         } else if ($('#thread').length > 0) {
@@ -147,7 +147,7 @@ $(function() {
         }
 
         //infinite scrolling for the homepage
-        if ($('#threads').length > 0 && $(window).scrollTop() + $(window).height() > $(document).height() - 25) {
+        if ($('#threads').length > 0 && $('div.search-results-container').length == 0 && $(window).scrollTop() + $(window).height() > $(document).height() - 25) {
             $('#loading-indicator').fadeIn(15);
             $.post('/homepage/scroll', {'iteration': window.scroll_iteration}, function(data) {
                 window.scroll_iteration = window.scroll_iteration + 1;

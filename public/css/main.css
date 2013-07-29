@@ -201,6 +201,7 @@ nav.main-nav {
             padding: 7px 10px;
             width: 375px;
             background: rgba(0, 0, 0, 0.15);
+            color: #fff;
             border: none;
         }
 
@@ -219,9 +220,10 @@ nav.main-nav {
 
         input:hover {
             background: rgba(0,0,0,0.18);
+            color: #fff;
         }
 
-        input:focus {
+        input:focus, input:active {
             background: rgba(0,0,0,0.2);
             color: #fff;
         }
@@ -405,6 +407,11 @@ ul.main-nav {
     a:not(.search):hover {
         background: rgba(0, 0, 0, 0.1);
     }
+}
+
+/*search highlighting*/
+span.highlight {
+    background: rgba(89,180,207, 0.2);
 }
 
 /*Homepage threads view*/

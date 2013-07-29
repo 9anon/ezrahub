@@ -3,7 +3,6 @@
 class Home_Controller extends Base_Controller {
 
 	public function action_index() {
-
 		$threads = Thread::order_by('sticky', 'desc')->order_by('updated_at', 'desc')->take(Config::get('ezrahub.num_homepage_threads'))->get();
 		Section::inject('title', 'a forum for Cornell University students');
 		Section::inject('description', 'Ezra Hub is a popular and student-run forum for Cornell University students. Anonymous posting and user accounts are allowed and everything from frats, sororities, classes, drugs, housing and more is discussed. Ezra Hub is not endorsed by Cornell University.');
@@ -14,15 +13,22 @@ class Home_Controller extends Base_Controller {
 		}
 	}
 
-    public function action_scroll() {
+    public function action_search() {
+        $query = trim(Input::get('query'));
+        $matches = Thread::where('title', 'LIKE', '%' . $query . '%')->order_by('updated_at', 'desc')->take(Config::get('ezrahub.num_homepage_threads'))->get();
+        Section::inject('title', 'Search for "' . $query . '"');
+        Section::inject('description', 'Ezra Hub is a popular and student-run forum for Cornell University students. Anonymous posting and user accounts are allowed and everything from frats, sororities, classes, drugs, housing and more is discussed. Ezra Hub is not endorsed by Cornell University.');
+        Section::inject('canonical', '<link rel="canonical" href="http://ezrahub.com/search/' . $query . '"/>');
+        $this->layout->nest('content', 'home.searchresults', array('threads' => $matches, 'query' => $query));
+    }
 
+    public function action_scroll() {
         $iteration = (int) Input::get('iteration');
         $new_threads = Thread::order_by('updated_at', 'desc')->skip(Config::get('ezrahub.num_homepage_threads') + 15 * $iteration)->where('sticky', '<>', '1')->take(15)->get();
         return Response::json(array('threads_html' => View::make('home.threads', array('threads' => $new_threads))->render()));
     }
 
 	public function action_update() {
-
         $latest_id = Input::get('latest_id');
         $new_threads = Thread::where('id', '>', $latest_id)->order_by('updated_at', 'desc')->get();
 
@@ -50,8 +56,7 @@ class Home_Controller extends Base_Controller {
 		$this->layout->nest('content', 'home.about');
 	}
 
-	public function action_banned()
-	{
+	public function action_banned() {
 		if (Auth::check() && Auth::user()->banned) {
 			$ban = Auth::user()->bans_to()->order_by('expires_at', 'desc')->first();
 			$this->layout->nest('content', 'error.banned', array('ban' => $ban));

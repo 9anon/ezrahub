@@ -29,7 +29,7 @@
                             <span class="icon-left icon-search"></span>
                             <?php echo Form::open('search', 'POST'); ?>
                                 @include('layout.placeholderfill')
-                                <?php echo Form::text('search-input', null, array('placeholder' => random_placeholder())); ?>
+                                <?php echo Form::text('query', null, array('placeholder' => random_placeholder(), 'id' => 'query')); ?>
                             <?php echo Form::close(); ?>
                         </li>
                         <li>

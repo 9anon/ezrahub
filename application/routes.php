@@ -152,6 +152,8 @@ Route::get('users/online', 'home@online_users');
 Route::post('homepage/update', 'home@update');
 //infinite scrolling
 Route::post('homepage/scroll', 'home@scroll');
+//search
+Route::post('search', 'home@search');
 
 
 /*
