@@ -424,7 +424,7 @@ span.highlight {
 }
 
 #no-sort-header {
-    background: #032838;
+    background: #333;
     color: #d0d0d0;
     height: 35px;
     line-height: 35px;
@@ -758,7 +758,7 @@ span.post-ago {
     .border-sizing;
     width: 100%;
     padding-left: 15px;
-    background: #032838;
+    background: #333;
     height: 35px;
     line-height: 35px;
     color: #d0d0d0;
@@ -1655,7 +1655,7 @@ div.image-float-box {
         margin: 0 0 0 275px;
 
         #user-profile-navigation {
-            background: #032838;
+            background: #333;
             color: #eee;
 
             nav {
