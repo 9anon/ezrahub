@@ -7,22 +7,22 @@ class PostCount {
 
         if ($post_count == 0) {
             $class = 'no-replies';
-            $string = 'none';
+            $string = 'no replies';
         } elseif ($post_count >= 100) {
             $class = 'most-replies';
-            $string =  '<span class="icon-star"></span> ' . $post_count;
+            $string =  '<span class="icon-star"></span> ' . $post_count . ' replies';
         } elseif($post_count >= 50) {
             $class = 'even-more-replies';
-            $string = '<span class="icon-circle"></span> ' . $post_count;
+            $string = $post_count . ' replies';
         } elseif($post_count >= 25) {
             $class = 'more-replies';
-            $string = '<span class="icon-circle"></span> ' . $post_count;
+            $string = $post_count . ' replies';
         } elseif ($post_count > 1) {
             $class = 'some-replies';
-            $string = '<span class="icon-circle"></span> ' . $post_count;
+            $string = $post_count . ' replies';
         } else {
             $class = 'one-reply';
-            $string = '<span class="icon-circle"></span> 1';
+            $string = '1 reply';
         }
 
         return '<span class="' . $class . '">' . $string . '</span>';
