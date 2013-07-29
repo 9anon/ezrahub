@@ -2270,18 +2270,13 @@ input.error {
 div#loading-indicator {
     display: none;
     position: fixed;
-    bottom: 15px;
+    bottom: 10px;
     right: 15px;
     padding: 8px 12px;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     color: #eee;
     font-size: 15px;
     .rounded-corners(2px);
-
-    img {
-        margin-right: 15px;
-    }
-
 }
 
 /*Modal Windows*/
