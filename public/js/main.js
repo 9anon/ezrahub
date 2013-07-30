@@ -147,7 +147,7 @@ $(function() {
         }
 
         //infinite scrolling for the homepage
-        if ($('#threads').length > 0 && $('div.search-results-container').length == 0 && $(window).scrollTop() + $(window).height() > $(document).height() - 25) {
+        if ($('#threads').length > 0 && $('div.search-results-container').length == 0 && $(window).scrollTop() + $(window).height() > $(document).height() - 100) {
             $('#loading-indicator').fadeIn(15);
             $.post('/homepage/scroll', {'iteration': window.scroll_iteration}, function(data) {
                 window.scroll_iteration = window.scroll_iteration + 1;
@@ -223,8 +223,8 @@ $(function() {
 
     //new thread form show
     $(document).on('click', 'li.new-thread', function() {
-        $('div#no-sort-view, div#-sort-view').hide();
-        $('div#new-thread-container').show();
+        $('div#no-sort-view').fadeOut(150);
+        $('div#new-thread-container').fadeIn(300);
         $('li.user-link.mark-all-as-read').fadeOut(300);
         $(this).removeClass('new-thread').addClass('hide-new-thread').html('<span class="title icon-reply"></span>');
         return false;
