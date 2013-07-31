@@ -1195,10 +1195,6 @@ div.textarea-formatting {
     line-height: 40px;
 }
 
-.format-icon:first-child {
-    margin-left: 10px;
-}
-
 .format-icon {
     display: inline-block !important;
     font-size: 13px;
@@ -1206,7 +1202,7 @@ div.textarea-formatting {
     height: 40px !important;
     cursor: pointer;
     margin: 0;
-    padding: 0 15px 0 0;
+    padding: 0 10px;
 }
 
 div.info-bar {
