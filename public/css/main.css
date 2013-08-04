@@ -670,12 +670,6 @@ div.thread-column.thread-title {
                 margin-left: 3px;
             }
         }
-
-        a.thread-link:visited {
-            span.thread-title {
-                color: #4a6b82;
-            }
-        }
     }
 }
 

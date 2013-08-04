@@ -45,7 +45,7 @@ The current version of Ezra Hub is 0.9b. Ezra Hub is currently a **BETA** releas
 Ezra Hub is quick and simple to install for a **technically-oriented** administrator. If you are not familiar with server functions, Apache2 and at least willing to edit a few lines of code, you will likely have trouble. Most of the difficulty comes in installing and configuring the Laravel framework and not in setting up Ezra Hub. If you become stuck at any point during installation of Laravel, the [Laravel 3 documentation](http://three.laravel.com/docs) and the [Laravel 3 forums](http://forums.laravel.io/viewforum.php?id=7) are both helpful resources.
 
 ##### Can I run Ezra Hub on shared hosting?
-Yes, you can run Ezra Hub on shared hosting (GoDaddy, etc.), but only shared hosting that meets the minimum requirements. You may also have to jump through extra hurdles to overcome the shortcomings of your hosting environment. One common issue is the inability to edit the `DocumentRoot`. If you do not have the ability to do so, there is a helpful resource [here](http://forums.laravel.io/viewtopic.php?id=1258).
+Yes, you can run Ezra Hub on shared hosting (GoDaddy, etc.). You may have to jump through extra hurdles to overcome the shortcomings of your hosting environment. One common issue is the inability to edit the `DocumentRoot`. If you do not have the ability to do so, there is a helpful resource [here](http://forums.laravel.io/viewtopic.php?id=1258).
 
 ##### Installation/Configuration Directions
 1. Create a new table on your MySQL server and import the `ezrahub.sql` SQL dump (located in the root of this repo) into a MySQL database of your choosing.
