@@ -152,7 +152,6 @@ $(function() {
             $.post('/homepage/scroll', {'iteration': window.scroll_iteration}, function(data) {
                 window.scroll_iteration = window.scroll_iteration + 1;
                 $('#threads-container').append(data.threads_html);
-                console.log('next iteration is: ' + window.scroll_iteration);
                 $('#loading-indicator').fadeOut(15);
             });
         }
@@ -230,11 +229,36 @@ $(function() {
         return false;
     });
 
+    //anti-robot verification
+    $(document).on('click', 'div.not-a-robot', function() {
+        if (!$(this).hasClass('confirmed')) {
+            $(this).addClass('confirmed');
+            $(this).children('span.icon-unchecked').removeClass('icon-unchecked').addClass('icon-check-sign');
+        } else {
+            $(this).removeClass('confirmed');
+            $(this).children('span.icon-check-sign').removeClass('icon-check-sign').addClass('icon-unchecked');
+        }
+    });
+
     //submitting new thread form
     $(document).on('submit', '#new-thread-form', function() {
+        //collect info
+        var form_data = $('#new-thread-form').serializeObject();
+        //if we need to confirm robot status
+        if ($('div.not-a-robot').length > 0) {
+            if ($('div.not-a-robot').hasClass('confirmed')) {
+                form_data.robot = new Date().getTime();
+            }
+        }
+        console.log(form_data);
         //submit the form
-        $.post('/thread/new/', $('#new-thread-form').serializeObject(), function(data) {
+        $.post('/thread/new/', form_data, function(data) {
             $('span.become-anon input[type="checkbox"]').attr('checked', false);
+            $('div.not-a-robot').removeClass('confirmed').children('span.icon-check-sign').removeClass('icon-check-sign').addClass('icon-unchecked');
+            //reload the recaptcha
+            if(typeof Recaptcha != 'undefined') {
+               Recaptcha.reload();
+            }
             if (data.hasOwnProperty('new_thread_url')) {
                 //it worked, redirect to the new thread
                 window.location.replace('/thread/' + data.new_thread_url);

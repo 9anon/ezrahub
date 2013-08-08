@@ -49,7 +49,9 @@ class Thread_Controller extends Base_Controller {
                 'date'        => 'honeypot',
                 'date_time'   => 'required|honeytime:' . Config::get('ezrahub.honeytime'),
                 //make anonymous cowards do the recaptcha
-                'recaptcha_response_field' => 'required|recaptcha:' . Config::get('ezrahub.recaptcha_private_key')
+                'recaptcha_response_field' => 'required|recaptcha:' . Config::get('ezrahub.recaptcha_private_key'),
+                //make anonymous cowards verify they are not a robot
+                'robot' => 'required'
             );
         } else {
             $rules = array(
@@ -63,7 +65,9 @@ class Thread_Controller extends Base_Controller {
             'title_required' => 'You must type out a title for this thread.',
             'title_between' => 'The title of your thread must be between :min and :max characters.',
             'post-body_required' => 'You can\'t submit an empty thread. Please type out something for the post body!',
-            'post-body_between' => 'The body of your post must be between :min and :max characters. You have written ' . strlen($input['post-body']) . ' characters.'
+            'post-body_between' => 'The body of your post must be between :min and :max characters. You have written ' . strlen($input['post-body']) . ' characters.',
+            'recaptcha_response_field_required' => 'You must fill out the captcha correctly.',
+            'robot_required' => 'You must verify that you are not a robot'
         );
         $validation = Validator::make($input, $rules, $messages);
 

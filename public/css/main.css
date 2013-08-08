@@ -1460,6 +1460,21 @@ input#post-new-reply, input#post-new-thread {
     margin: 0 0 0 10px;
 }
 
+div.not-a-robot {
+    display: inline-block;
+    height: 41px;
+    width: 135px;
+    margin: 0 -15px 0 0;
+    background: #ec4000;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+div.not-a-robot.confirmed {
+    background: #00bf2d;
+}
+
 div.submit-container {
     input[type="checkbox"] {
         position: relative;

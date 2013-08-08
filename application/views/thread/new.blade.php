@@ -31,6 +31,10 @@
                 <div class="submit-container">
                     @if (Auth::check())
                         <span class="become-anon">Anon: {{ Form::checkbox('becomeanon', 'value', false) }}</span>
+                    @else
+                        <div class="not-a-robot">
+                            I am a human <span class="icon-unchecked"></span>
+                        </div>
                     @endif
                     {{ Form::submit('Post a new thread', array('id' => 'post-new-thread')); }}
                 </div>
