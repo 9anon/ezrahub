@@ -32,7 +32,7 @@ class BBCode {
      * @return  string
      */
     public static function quote($data) {
-        return '<blockquote><p>' . $data . '</p></blockquote>';
+        return '<blockquote>' . $data . '</blockquote>';
     }
 
     /**

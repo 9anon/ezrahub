@@ -10,7 +10,7 @@ class Post extends Eloquent {
     }
 
     public function set_body($body) {
-        $this->set_attribute('body', trim($body));
+        $this->set_attribute('body', strip_tags(trim($body)));
     }
 
     //getters

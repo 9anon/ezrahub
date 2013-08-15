@@ -13,7 +13,7 @@ class Thread extends Eloquent {
     }
 
     public function set_title($title) {
-        $this->set_attribute('title', trim($title));
+        $this->set_attribute('title', strip_tags(trim($title)));
     }
 
     //getters
