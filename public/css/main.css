@@ -371,7 +371,7 @@ div#threads-navigation {
 
 }
 
-/* keep out to use elsewhere */
+/* keep out to use elsewhere */
 span.messages-indicator.unread {
     color: #00a5d9 !important;
 }
@@ -528,7 +528,7 @@ span.no-threads-yet {
     font-size: 14px;
 }
 
-/* rows */
+/* rows */
 @row-height: 35px;
 div.thread-row {
     padding: 0;
@@ -552,7 +552,7 @@ div.thread-row.sticky {
     }
 }
 
-/* sections */
+/* sections */
 div.main-section, div.secondary-section {
     .border-sizing;
     display: inline-block;
@@ -569,7 +569,7 @@ div.secondary-section {
     width: 33%;
 }
 
-/* columns */
+/* columns */
 div.thread-column {
     display: inline-block;
     float: left;
@@ -580,7 +580,7 @@ div.thread-column {
     }
 }
 
-/* thread indicators */
+/* thread indicators */
 div.thread-column.thread-indicators {
     width: 3.5%;
     font-size: 14px;
@@ -590,7 +590,7 @@ div.thread-column.thread-indicators {
         color: transparent;
     }
 
-    /* sticky */
+    /* sticky */
     span.icon-sticky {
         color: #d88100;
     }
@@ -600,13 +600,13 @@ div.thread-column.thread-indicators {
     }
 }
 
-/* unread is site-wide */
+/* unread is site-wide */
 span.icon-unread {
     color: #08c;
     font-size: 12px;
 }
 
-/* don't show indicator if sticky, lock or unread */
+/* don't show indicator if sticky, lock or unread */
 div.sticky, div.unread, div.locked {
 
     div.thread-indicators {
@@ -617,10 +617,10 @@ div.sticky, div.unread, div.locked {
     }
 }
 
-/* if it's both stickied/locked AND unread */
+/* if it's both stickied/locked AND unread */
 div.sticky.unread, div.locked.unread {
 
-    /* hide sticky, locked and show the unread */
+    /* hide sticky, locked and show the unread */
     span.icon-sticky {
         display: none;
     }
@@ -730,7 +730,7 @@ div.thread-column.thread-latest-post {
     }
 }
 
-/* so these rules apply in the thread view as well */
+/* so these rules apply in the thread view as well */
 span.post-ago {
     color: #777;
 
@@ -1067,7 +1067,7 @@ div.form-row {
     }
 }
 
-/* no bump */
+/* no bump */
 div.submit-container {
     display: inline-block;
     float: right;
@@ -1151,7 +1151,7 @@ input[type="file"] {
     outline: none;
 }
 
-/* submitted and success states */
+/* submitted and success states */
 input.submitted {
     background: #888 !important;
 }
@@ -1252,7 +1252,7 @@ div.index-avatar-helper {
     margin: 0 5px;
 }
 
-/* catch all */
+/* catch all */
 img.avatar {
     .rounded-corners(2px);
 }
@@ -1353,7 +1353,7 @@ span.reputation.negative {
     color: #da4a3e;
 }
 
-/* reputation giving form */
+/* reputation giving form */
 div.modal-window.rep-neg {
     width: 375px !important;
 }
@@ -2070,7 +2070,7 @@ div.image-float-box {
     }
 }
 
-/* messages interface */
+/* messages interface */
 div.message-row {
     min-height: 45px;
     padding: 0;
@@ -2130,7 +2130,7 @@ div.message-row:not(:last-child) {
 }
 
 
-/* Profile Administration Stuff */
+/* Profile Administration Stuff */
 form#change-bio-form {
     textarea {
         background: rgba(255, 255, 255, 0.15);
@@ -2277,7 +2277,7 @@ input.error {
     background: rgba(0,0,0,0.7);
 }
 
-/* loading indicator */
+/* loading indicator */
 div#loading-indicator {
     display: none;
     position: fixed;
@@ -2415,7 +2415,7 @@ div#anon-coward-form {
     }
 }
 
-/* recaptcha iframe fix FUCK YOU GOOGLE */
+/* recaptcha iframe fix FUCK YOU GOOGLE */
 iframe {
     display:none !important;
 }
