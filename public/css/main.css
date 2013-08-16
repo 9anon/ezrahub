@@ -245,7 +245,7 @@ div#threads-navigation {
     top: 0;
     left: 0;
     padding-top: @header-height;
-    background: #111;
+    background: #252525;
     text-align: center;
     z-index: +2;
 
@@ -442,18 +442,6 @@ span.highlight {
         padding-left: 15px;
         text-align: left;
     }
-
-    div.no-sort-header-column:nth-child(2) {
-        width: 14%;
-        padding-left: 2.5%;
-        font-size: 13px;
-    }
-
-    div.no-sort-header-column:nth-child(3) {
-        width: 13.5%;
-        padding-left: 2.5%;
-        font-size: 13px;
-    }
 }
 
 #no-sort-header.fixed {
@@ -529,11 +517,9 @@ span.no-threads-yet {
 }
 
 /* rows */
-@row-height: 35px;
 div.thread-row {
-    padding: 0;
-    height: @row-height;
-    line-height: @row-height;
+    padding: 10px 18px;
+    border-bottom: 1px solid #ddd;
 }
 
 div.thread-row.unread {
@@ -552,42 +538,18 @@ div.thread-row.sticky {
     }
 }
 
-/* sections */
-div.main-section, div.secondary-section {
-    .border-sizing;
-    display: inline-block;
-    float: left;
-    height: @row-height;
-    line-height: @row-height;
-}
-
-div.main-section {
-    width: 67%;
-}
-
-div.secondary-section {
-    width: 33%;
-}
-
-/* columns */
-div.thread-column {
-    display: inline-block;
-    float: left;
-
-    p {
-        display: inline-block;
-        margin: 0;
-    }
+div.thread-header {
+    display: block;
 }
 
 /* thread indicators */
-div.thread-column.thread-indicators {
-    width: 3.5%;
-    font-size: 14px;
-    text-align: center;
+div.thread-indicators {
+    font-size: 18px;
+    display: inline-block;
+    padding: 0 5px 0 0;
 
     span.icon-indicator {
-        color: transparent;
+        color: #aaa;
     }
 
     /* sticky */
@@ -603,7 +565,7 @@ div.thread-column.thread-indicators {
 /* unread is site-wide */
 span.icon-unread {
     color: #08c;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 /* don't show indicator if sticky, lock or unread */
@@ -630,109 +592,101 @@ div.sticky.unread, div.locked.unread {
     }
 }
 
-/*Thread titles and preview*/
-div.thread-column.thread-title {
-    width: 90%; /* will be overwritten by JS */
 
-    h3 {
+div.thread-header h3 {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: bold;
+
+    a.thread-link {
         display: inline-block;
-        white-space: nowrap;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-        font-size: 14px;
-        color: #777;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        width: 100%; /* full width of the thread-title div */
+        color: #369;
+        letter-spacing: -1px;
 
-        a.thread-link {
-            display: inline-block;
-            line-height: @row-height;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            color: #777 !important;
-            width: 100%; /* full width of the thread-title div */
-
-            span.thread-title {
-                font-size: 16px;
-                text-transform: none;
-                margin-right: 3px;
-            }
-
-            span.username {
-                color: #777 !important;
-            }
-
-            span.edited-info {
-                margin-left: 3px;
-            }
+        span.thread-title {
+            font-size: 18px;
+            text-transform: none;
         }
     }
 }
 
-div.thread-column.thread-replies {
-    .border-sizing;
-    width: 18%;
-    margin: 0 15.5% 0 12%;
+div.thread-subtitle {
+    color: #888;
+    font-size: 14px;
 
-    p {
-        color: #777;
-        margin: 0;
-        font-size: 15px;
+    span.username {
+        margin-right: 3px;
+    }
 
-        span.no-replies {
-            font-size: 11px;
-            color: #ddd;
-        }
+    span.reputation {
+        margin: 0 5px 0 0;
+    }
 
-        span.most-replies {
-            color: #fac221;
-        }
+    span.icon-time {
+        color: #999;
+    }
 
-        span.even-more-replies {
-            color: #08c;
-
-        }
-
-        span.more-replies {
-            color: #08c;
-
-        }
-
-        span.some-replies {
-            color: #999;
-        }
-
-        span.one-reply {
-            color: #ccc;
-        }
-
-        span > span {
-            font-size: 8px;
-            margin-right: 3px;
-            position: relative;
-            top: -1.5px;
-        }
+    img.avatar {
+        position: relative;
+        top: -1px;
     }
 }
 
-div.thread-column.thread-latest-post {
-    .border-sizing;
-    width: 50%;
-
+div.thread-content-preview {
     p {
-        margin: 0;
-        font-size: 14px;
-        color: #777;
+        margin: 8px 0;
+        font-style: italic;
+    }
+}
+
+div.thread-replies {
+    color: #888;
+
+    span.icon-comments {
+        color: #999;
+    }
+
+    span.username {
+        color: #888;
+    }
+
+    span.no-replies {
+
+    }
+
+    span.most-replies {
+
+    }
+
+    span.even-more-replies {
+
+    }
+
+    span.more-replies {
+
+    }
+
+    span.some-replies {
+
+    }
+
+    span.one-reply {
+
+    }
+
+    span > span {
+        font-size: 8px;
+        margin-right: 3px;
+        position: relative;
+        top: -1.5px;
     }
 }
 
 /* so these rules apply in the thread view as well */
 span.post-ago {
-    color: #777;
+    color: #888;
 
     span.icon-time {
         color: #888;
@@ -768,12 +722,13 @@ span.post-ago {
         color: #444 !important;
 
         h2.op-title {
-            font-size: 20px;
+            font-size: 18px;
             line-height: 1;
             font-weight: bold;
             text-transform: none;
             margin: 0 0 4px 0;
             color: #555;
+            letter-spacing: -1px;
         }
 
         img.avatar {
@@ -829,7 +784,6 @@ div.thread-reply:not(:last-of-type) {
 
 span.edited-info {
     color: #999;
-    font-size: 11px;
 }
 
 div.post-body {
