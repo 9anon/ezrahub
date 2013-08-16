@@ -165,13 +165,28 @@ $(function() {
         return false;
     });
 
+    //size the thread title section so there is no overflow
+    var old_width = parseInt($('div.main-section').css('width'), 10);
+    var new_width = old_width - 0.05*old_width - 40;
+    //apply the new width
+    $('div.thread-title').css('width', new_width + 'px');
+
+    //and when the window resizes
+    $(window).resize(function() {
+        //work out what the new width will be
+        var old_width = parseInt($('div.main-section').css('width'), 10);
+        var new_width = old_width - 0.05*old_width - 40;
+        //apply the new width
+        $('div.thread-column.thread-title, div.thread-column.thread-title h3').css('width', new_width + 'px');
+    });
+
     //hovering over a normal thread
     $('#threads').on({
         mouseenter: function() {
             $(this).css('background', 'rgba(0, 0, 0, 0.06)').find('span.icon-indicator').css('color', '#999');
         },
         mouseleave: function() {
-            $(this).css('background', 'transparent').find('span.icon-indicator').css('color', '#aaa');
+            $(this).css('background', 'transparent').find('span.icon-indicator').css('color', 'transparent');
         }
     }, 'div.thread-row:not(.sticky, .unread, .locked)');
 
