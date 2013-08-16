@@ -37,9 +37,7 @@
             <?php $last_post = $thread->posts()->order_by('created_at', 'desc')->first(); ?>
             <div class="thread-column thread-latest-post<?php if ($last_post->user->id == 0) { echo ' anon-coward'; } ?>">
                 <p>
-                    @if ($last_post->user->id != 0)
-                        {{ Avatar::generate('small', $last_post->user) }}
-                    @endif
+                    {{ Avatar::generate('small', $last_post->user) }}
                     <a href="/user/{{ $last_post->user->name }}">
                         <span class="username">{{ $last_post->user->name }}</span>
                     </a>

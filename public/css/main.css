@@ -234,7 +234,7 @@ nav.user-nav {
     float: right;
 }
 
-@sidebar-width: 55px;
+@sidebar-width: 60px;
 
 div#threads-navigation {
     .border-sizing;
@@ -276,7 +276,6 @@ div#threads-navigation {
                 }
 
                 span.selection {
-                    display: none;
                     font-size: 12px;
                     text-align: center;
                     cursor: pointer;
@@ -1263,6 +1262,7 @@ img.avatar.small {
     position: relative;
     vertical-align: middle;
     margin: 0 2px;
+    .rounded-corners(7px);
 }
 
 img.avatar.medium {
