@@ -6,7 +6,7 @@ class PrettyPrint {
             return "No date provided";
         }
 
-        $periods         = array("s", "m", "h", "d", "w", "m", "y", "decade");
+        $periods         = array("s", "m", "h", "d", "w", "mo", "y", "decade");
         $lengths         = array("60","60","24","7","4.35","12","10");
 
         $now             = time();

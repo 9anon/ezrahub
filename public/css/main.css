@@ -245,7 +245,7 @@ div#threads-navigation {
     top: 0;
     left: 0;
     padding-top: @header-height;
-    background: #111;
+    background: #252525;
     text-align: center;
     z-index: +2;
 
