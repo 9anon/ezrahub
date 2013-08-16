@@ -568,17 +568,6 @@ span.icon-unread {
     font-size: 16px;
 }
 
-/* don't show indicator if sticky, lock or unread */
-div.sticky, div.unread, div.locked {
-
-    div.thread-indicators {
-
-        span.icon-indicator {
-            display: none;
-        }
-    }
-}
-
 /* if it's both stickied/locked AND unread */
 div.sticky.unread, div.locked.unread {
 

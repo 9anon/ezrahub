@@ -2,18 +2,19 @@
     <?php if (Auth::check() && $thread->threadviews()->where('user_id', '=', Auth::user()->id)->where('updated_at', '>=', $thread->updated_at)->count() == 0) { $unread = true; } else { $unread = false; } ?>
     <div class="thread-row<?php if ($thread->sticky) { echo ' sticky'; } if ($thread->lock) { echo ' locked'; } if ($unread == true) { echo ' unread'; } ?>" data-thread-id="{{ $thread->id }}">
         <div class="thread-header">
-            <div class="thread-indicators">
-                <span class="icon-indicator icon-ellipsis-vertical"></span>
-                @if ($thread->sticky)
-                    <span class="icon-sticky icon-pushpin"></span>
-                @endif
-                @if ($thread->lock == 1)
-                    <span class="icon-locked icon-lock"></span>
-                @endif
-                @if ($unread)
-                    <span class="icon-unread icon-asterisk"></span>
-                @endif
-            </div>
+            @if ($thread->sticky || $thread->lock || $unread)
+                <div class="thread-indicators">
+                    @if ($thread->sticky)
+                        <span class="icon-sticky icon-pushpin"></span>
+                    @endif
+                    @if ($thread->lock)
+                        <span class="icon-locked icon-lock"></span>
+                    @endif
+                    @if ($unread)
+                        <span class="icon-unread icon-asterisk"></span>
+                    @endif
+                </div>
+            @endif
             <h3>
                 <a class="thread-link" href="/thread/{{ $thread->id }}/{{ $thread->slug }}">
                     <span class="thread-title">{{ $thread->title }}</span>
