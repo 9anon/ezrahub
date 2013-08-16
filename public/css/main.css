@@ -603,7 +603,6 @@ div.thread-header h3 {
     a.thread-link {
         display: inline-block;
         color: #369;
-        letter-spacing: -1px;
 
         span.thread-title {
             font-size: 18px;
@@ -613,7 +612,7 @@ div.thread-header h3 {
 }
 
 div.thread-subtitle {
-    color: #888;
+    color: #666;
     font-size: 14px;
 
     span.username {
@@ -625,7 +624,7 @@ div.thread-subtitle {
     }
 
     span.icon-time {
-        color: #999;
+        color: #777;
     }
 
     img.avatar {
@@ -642,14 +641,14 @@ div.thread-content-preview {
 }
 
 div.thread-replies {
-    color: #888;
+    color: #666;
 
     span.icon-comments {
         color: #999;
     }
 
     span.username {
-        color: #888;
+        color: #666;
     }
 
     span.no-replies {
@@ -728,7 +727,6 @@ span.post-ago {
             text-transform: none;
             margin: 0 0 4px 0;
             color: #555;
-            letter-spacing: -1px;
         }
 
         img.avatar {
