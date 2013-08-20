@@ -184,7 +184,7 @@ header {
         font-family: 'Lobster';
         font-size: 42px;
         line-height: 45px;
-        color: #fff !important;
+        color: #eee !important;
         text-rendering: optimizelegibility;
         -webkit-font-smoothing: antialiased;
     }
@@ -819,7 +819,6 @@ div.post-body {
 
     span.quoted-user {
         color: #3b8bba;
-        font-weight: bold;
     }
 
     blockquote {
@@ -894,12 +893,12 @@ span.group {
     >span {
         .border-sizing;
         font-size: 9px;
-        width: 15px;
-        height: 15px;
+        width: 18px;
+        height: 18px;
+        padding: 1px;
     }
 
     span.icon-key {
-        padding: 1px;
         color: #665600;
         background: #e7d7be;
         border: 1px solid #ccaa73;
@@ -907,7 +906,6 @@ span.group {
     }
 
     span.icon-bolt {
-        padding: 1px;
         color: #493da6;
         background: #dfdcf2;
         border: 1px solid #a9a3dd;
@@ -1112,7 +1110,7 @@ input[type="text"], input[type="password"], textarea {
     width: 100%;
     outline: none;
     border: none;
-    color: #444;
+    color: #777;
     font-size: 13px;
     border: 1px solid #ccc;
 }
@@ -1158,7 +1156,7 @@ div.textarea-formatting {
     padding: 0 0 0 15px;
     background: rgb(245, 245, 245);
     background: 1px solid #eee;
-    color: #5a5a5a;
+    color: #777;
     line-height: @formatting-bar-height;
 }
 
