@@ -1,15 +1,15 @@
 <div id="threads-navigation">
     <nav class="sidebar-nav">
         <ul>
+            <li class="user-link reply">
+                <span class="title icon-edit"></span>
+                <span class="selection">reply</span>
+            </li>
             <li class="user-link back">
                 <a href="/">
                     <span class="title icon-reply"></span>
                     <span class="selection">home</span>
                 </a>
-            </li>
-            <li class="user-link reply">
-                <span class="title icon-edit"></span>
-                <span class="selection">reply</span>
             </li>
             @if (Auth::check())
                 <li class="user-link me">
