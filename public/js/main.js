@@ -124,7 +124,7 @@ $(function() {
         //take care of the sidebar
         if ($(this).scrollTop() > 15) {
             $('#back-to-top').fadeIn();
-            $('div#threads-navigation').stop().animate({'padding-top': '35px'}, 100);
+            $('div#threads-navigation').stop().animate({'padding-top': '50px'}, 100);
             $('div.selection-window').stop().animate({'top': '0px'}, 100);
         } else {
             $('#back-to-top').fadeOut();

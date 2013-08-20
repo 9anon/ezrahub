@@ -69,7 +69,6 @@ body {
 }
 
 img {
-    .rounded-corners;
     outline: 0 !important;
     border: 0 !important;
 }
@@ -235,7 +234,7 @@ nav.user-nav {
     float: right;
 }
 
-@sidebar-width: 60px;
+@sidebar-width: 70px;
 
 div#threads-navigation {
     .border-sizing;
@@ -265,18 +264,18 @@ div#threads-navigation {
                 display: inline-block;
                 text-decoration: none;
                 color: #aaa !important;
-                padding: 10px 5px;
+                padding: 15px 5px;
                 width: @sidebar-width;
                 cursor: pointer;
-                line-height: 1;
 
                 span.title {
                     display: block;
                     font-size: 25px;
-                    color: #ddd;
+                    color: #bbb;
                 }
 
                 span.selection {
+                    display: none;
                     font-size: 12px;
                     text-align: center;
                     cursor: pointer;
@@ -334,8 +333,7 @@ div#threads-navigation {
                 overflow: hidden;
 
                 img.avatar {
-                    display: block;
-                    margin: 0 auto;
+                    display: inline;
                     margin-bottom: 5px;
                 }
 
@@ -416,14 +414,14 @@ span.highlight {
 #no-sort-header {
     background: #252525;
     color: #d0d0d0;
-    height: 35px;
-    line-height: 35px;
+    height: 40px;
+    line-height: 40px;
     font-size: 15px;
 
     div.no-sort-header-column {
         display: inline-block;
         float: left;
-        height: 35px;
+        height: 40px;
     }
 
     div.no-sort-header-column:nth-child(1) {
@@ -451,10 +449,12 @@ span.highlight {
     position: fixed;
     top: 0;
     right: 0;
+    height: 50px;
+    line-height: 50px;
     width: 100%;
     padding-left: 65px;
     z-index: +2;
-    background: #ce0a31;
+    background: #ce0a31 url('/img/ezra.png') no-repeat 0 0;
     color: #eee !important;
 }
 
@@ -467,9 +467,9 @@ span.highlight {
     width: 100%;
     padding-left: 80px;
     z-index: +2;
-    height: 35px;
-    line-height: 30px;
-    background: #ce0a31 url('/img/ezra_short.png') no-repeat 0 0;
+    height: 50px;
+    line-height: 50px;
+    background: #ce0a31 url('/img/ezra.png') no-repeat 0 0;
     color: #eee !important;
 
     h2 {
@@ -731,7 +731,7 @@ span.post-ago {
 
 #op-post {
     margin: 0;
-    padding: 15px 45px 12px 15px;
+    padding: 18px 45px 12px 18px;
     border-bottom: 1px solid #ddd;
     position: relative;
 
@@ -771,7 +771,7 @@ span.post-ago {
 div.thread-reply {
     .border-sizing;
     margin: 0;
-    padding: 15px 45px 8px 15px;
+    padding: 15px 45px 5px 18px;
     position: relative;
 
     div.reply-info {
@@ -925,7 +925,6 @@ div#modal-container {
         padding: 20px;
         width: 300px;
         background: rgba(0, 0, 0, 0.8);
-        .rounded-corners(2px);
 
         h2 {
             text-align: left;
@@ -989,7 +988,6 @@ div#modal-container {
             margin: 10px auto 0 auto;
             padding: 10px 20px;
             text-align: center;
-            .rounded-corners;
             cursor: pointer;
         }
 
@@ -1003,7 +1001,6 @@ div#modal-container {
         background: rgba(255, 255, 255, 0.15);
         color: #fff;
         border: none;
-        .rounded-corners(0px);
     }
 }
 
@@ -1225,7 +1222,6 @@ div.index-avatar-helper {
 
 /* catch all */
 img.avatar {
-    .rounded-corners(2px);
 }
 
 img.avatar.small {
@@ -1577,7 +1573,6 @@ div.image-float-box {
                 text-align: center;
                 font-size: 12px;
                 color: #92bf00;
-                .rounded-corners(2px);
                 cursor: pointer;
             }
         }
@@ -1589,7 +1584,6 @@ div.image-float-box {
             padding: 10px 15px;
             background: #2a2a2a;
             color: #ccc;
-            .rounded-corners(2px);
 
             h2 {
                 font-size: 22px;
@@ -1615,7 +1609,6 @@ div.image-float-box {
                 text-align: center;
                 font-size: 12px;
                 color: #92bf00;
-                .rounded-corners(2px);
                 cursor: pointer;
             }
 
@@ -2259,7 +2252,6 @@ div#loading-indicator {
     background: rgba(0, 0, 0, 0.8);
     color: #eee;
     font-size: 15px;
-    .rounded-corners(2px);
 }
 
 /*Modal Windows*/
@@ -2321,7 +2313,6 @@ div#error-404 {
         width: 620px;
         padding: 20px;
         background: rgba(255, 255, 255, 0.04);
-        .rounded-corners(2px);
         margin: 0 auto;
     }
 
