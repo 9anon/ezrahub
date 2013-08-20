@@ -59,7 +59,7 @@ body {
     margin: 0px;
     padding: 0px;
     background: #fff;
-    color: #4a4a4a;
+    color: #777;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.428571429;
@@ -88,7 +88,7 @@ span.ezra-hub {
 }
 
 span.username {
-    color: #cc0022;
+    color: #dd514c;
 }
 
 span.icon-left {
@@ -105,7 +105,7 @@ span.icon-right {
 
 /*greying out anon coward*/
 .anon-coward span.username {
-    color: #555;
+    color: #888;
     font-weight: normal;
 }
 
@@ -153,13 +153,13 @@ header {
     height: @header-height;
     line-height: @header-height;
     background: #ce0a31;
-    color: #eee;
+    color: #ddd;
     font-size: 14px;
     position: relative;
     z-index: +4;
 
     a {
-        color: #eee !important;
+        color: #ddd !important;
     }
 
     span.hover-container {
@@ -184,6 +184,7 @@ header {
         font-family: 'Lobster';
         font-size: 42px;
         line-height: 45px;
+        color: #fff !important;
         text-rendering: optimizelegibility;
         -webkit-font-smoothing: antialiased;
     }
@@ -245,7 +246,7 @@ div#threads-navigation {
     top: 0;
     left: 0;
     padding-top: @header-height;
-    background: #252525;
+    background: #191818;
     text-align: center;
     z-index: +2;
 
@@ -272,7 +273,7 @@ div#threads-navigation {
                 span.title {
                     display: block;
                     font-size: 25px;
-                    color: #ccc !important;
+                    color: #ddd;
                 }
 
                 span.selection {
@@ -320,19 +321,13 @@ div#threads-navigation {
 
             }
 
-            li.browse-option.active {
-                background: rgba(0, 0, 0, 0.6);
-                position: relative;
-                z-index: +5;
-            }
-
             li.unhoverable {
                 cursor: default;
                 padding: 5px;
             }
 
-            li:not(.unhoverable):not(.active):hover {
-                background: rgba(255, 255, 255, 0.04);
+            li:not(.unhoverable):hover {
+                background: rgba(255, 255, 255, 0.03);
             }
 
             li.user-link.me {
@@ -351,10 +346,6 @@ div#threads-navigation {
 
             li.user-link.messages a {
                 color: #91f5f5 !important;
-            }
-
-            li.user-link.log-out:hover {
-                background: rgba(255, 0, 0, 0.07);
             }
 
             li:first-child {
@@ -423,7 +414,7 @@ span.highlight {
 }
 
 #no-sort-header {
-    background: #333;
+    background: #252525;
     color: #d0d0d0;
     height: 35px;
     line-height: 35px;
@@ -463,27 +454,8 @@ span.highlight {
     width: 100%;
     padding-left: 65px;
     z-index: +2;
-    background: #ce0a31 url('/img/ezra_short.png') no-repeat 0 0;
-    color: #fff !important;
-}
-
-#sort-header {
-    .border-sizing;
-    width: 100%;
-    padding: 7px 18px;
-    background: rgba(0, 0, 0, 0.9);
-    color: #ddd;
-    font-size: 15px;
-
-    span.end-sort {
-        margin-left: 10px;
-        opacity: 0.5;
-        cursor: pointer;
-    }
-
-    span.end-sort:hover {
-        opacity: 1;
-    }
+    background: #ce0a31;
+    color: #eee !important;
 }
 
 #thread-scroll-header {
@@ -498,7 +470,7 @@ span.highlight {
     height: 35px;
     line-height: 30px;
     background: #ce0a31 url('/img/ezra_short.png') no-repeat 0 0;
-    color: #fff !important;
+    color: #eee !important;
 
     h2 {
         font-size: 15px;
@@ -528,7 +500,7 @@ span.no-threads-yet {
 }
 
 /* rows */
-@row-height: 35px;
+@row-height: 38px;
 div.thread-row {
     padding: 0;
     height: @row-height;
@@ -544,10 +516,10 @@ div.thread-row.locked {
 }
 
 div.thread-row.sticky {
-    background: rgba(255, 153, 0, 0.25);
+    background: rgba(250, 210, 50, 0.4);
 
     span.thread-title {
-        color: #895200 !important;
+        color: #9f8004 !important;
     }
 }
 
@@ -591,7 +563,7 @@ div.thread-column.thread-indicators {
 
     /* sticky */
     span.icon-sticky {
-        color: #d88100;
+        color: #dab005;
     }
 
     span.icon-locked {
@@ -692,12 +664,12 @@ div.thread-column.thread-replies {
         }
 
         span.even-more-replies {
-            color: #08c;
+            color: #3b8bba;
 
         }
 
         span.more-replies {
-            color: #08c;
+            color: #3b8bba;
 
         }
 
@@ -750,7 +722,7 @@ span.post-ago {
     .border-sizing;
     width: 100%;
     padding-left: 15px;
-    background: #333;
+    background: #252525;
     height: 35px;
     line-height: 35px;
     color: #d0d0d0;
@@ -823,7 +795,7 @@ div.thread-reply {
 }
 
 div.thread-reply:not(:last-of-type) {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eaeaea;
 }
 
 span.edited-info {
@@ -846,17 +818,17 @@ div.post-body {
     }
 
     span.quoted-user {
-        color: #00a5d9;
+        color: #3b8bba;
         font-weight: bold;
     }
 
     blockquote {
-        display: block;
-        margin: 0;
-        padding: 8px 5px 8px 10px;
-        background: #e9e9e9;
-        border-left: 5px solid #41b7db;
-        font-style: italic;
+        display: inline-block;
+        margin: 5px 0;
+        padding: 8px 10px;
+        color: #666;
+        background: rgb(245, 245, 245);
+        border: 1px solid #eee;
         overflow: hidden;
         position: relative;
 
@@ -1179,20 +1151,22 @@ textarea.enhanced {
     border: none;
 }
 
+@formatting-bar-height: 50px;
 div.textarea-formatting {
     .border-sizing;
     margin: 0;
     padding: 0 0 0 15px;
-    background: #eee;
-    color: #666;
-    line-height: 40px;
+    background: rgb(245, 245, 245);
+    background: 1px solid #eee;
+    color: #5a5a5a;
+    line-height: @formatting-bar-height;
 }
 
 .format-icon {
     display: inline-block !important;
     font-size: 13px;
-    line-height: 40px !important;
-    height: 40px !important;
+    line-height: @formatting-bar-height !important;
+    height: @formatting-bar-height !important;
     cursor: pointer;
     margin: 0;
     padding: 0 10px;
@@ -1231,7 +1205,7 @@ span.rating {
 
 input[type="submit"] {
     .border-sizing;
-    background: #00acec;
+    background: #1f8dd6;
     width: 100%;
     color: #fff;
     font-size: 14px;
@@ -1338,7 +1312,7 @@ span.posted-by > span.reputation {
 }
 
 span.reputation.positive {
-    color: #1A8922;
+    color: #4db14d;
 }
 
 span.reputation.very.positive {
@@ -1455,7 +1429,7 @@ div.rep-neg {
 }
 
 input#post-new-reply, input#post-new-thread {
-    height: 41px;
+    height: @formatting-bar-height;
     width: 275px;
     margin: 0 0 0 10px;
 }

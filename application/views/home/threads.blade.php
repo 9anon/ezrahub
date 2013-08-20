@@ -7,7 +7,7 @@
                 @if ($thread->sticky)
                     <span class="icon-sticky icon-pushpin"></span>
                 @endif
-                @if ($thread->lock == 1)
+                @if ($thread->lock)
                     <span class="icon-locked icon-lock"></span>
                 @endif
                 @if ($unread)
@@ -21,11 +21,6 @@
                         <span class="post-ago"> {{ PrettyPrint::time($thread->created_at) }}</span>
                         by
                         <span class="username">{{ $thread->user->name }}</span>
-                        @if (!empty($thread->posts()->order_by('created_at', 'asc')->first()->edited_by))
-                            <span class="edited-info">
-                                <span class="icon-wrench"></span>
-                            </span>
-                        @endif
                     </a>
                 </h3>
             </div>

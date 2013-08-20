@@ -183,7 +183,7 @@ $(function() {
     //hovering over a normal thread
     $('#threads').on({
         mouseenter: function() {
-            $(this).css('background', 'rgba(0, 0, 0, 0.06)').find('span.icon-indicator').css('color', '#999');
+            $(this).css('background', 'rgba(0, 0, 0, 0.04)').find('span.icon-indicator').css('color', '#999');
         },
         mouseleave: function() {
             $(this).css('background', 'transparent').find('span.icon-indicator').css('color', 'transparent');
@@ -193,10 +193,10 @@ $(function() {
     //hovering over a stickied thread
     $('#threads').on({
         mouseenter: function() {
-            $(this).css('background', 'rgba(255, 153, 0, 0.35)');
+            $(this).css('background', 'rgba(250, 210, 50, 0.55)');
         },
         mouseleave: function() {
-            $(this).css('background', 'rgba(255, 153, 0, 0.25)');
+            $(this).css('background', 'rgba(250, 210, 50, 0.4)');
         }
     }, 'div.thread-row.sticky');
 
