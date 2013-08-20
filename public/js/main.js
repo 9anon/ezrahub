@@ -183,10 +183,10 @@ $(function() {
     //hovering over a normal thread
     $('#threads').on({
         mouseenter: function() {
-            $(this).css('background', 'rgba(0, 0, 0, 0.04)').find('span.icon-indicator').css('color', '#999');
+            $(this)/*.css('background', 'rgba(0, 0, 0, 0.04)')*/.find('span.icon-indicator').css('color', '#777');
         },
         mouseleave: function() {
-            $(this).css('background', 'transparent').find('span.icon-indicator').css('color', 'transparent');
+            $(this)/*.css('background', 'transparent')*/.find('span.icon-indicator').css('color', 'transparent');
         }
     }, 'div.thread-row:not(.sticky, .unread, .locked)');
 

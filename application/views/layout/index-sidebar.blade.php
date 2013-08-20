@@ -8,11 +8,14 @@
                 </a>
             </li>
             @if (Auth::check())
+                <li class="user-link mark-all-as-read">
+                    <span class="title icon-check"></span>
+                    <span class="selection">mark all as read</span>
+                </li>
                 <li class="user-link me">
                     <a href="/user/me/" <?php if (Auth::user()->messages_to()->where('read', '=', 0)->count() > 0) { echo 'class="unread"'; } ?>>
                         {{ Avatar::generate('medium', Auth::user()) }}
                         <span class="user-preview">
-                            {{ Reputation::generate(Auth::user()) }}
                             @if (Auth::user()->messages_to()->where('read', '=', 0)->count() > 0)
                                 <span class="messages-indicator">
                                     <span class="icon-envelope-alt"></span>
@@ -21,10 +24,6 @@
                             @endif
                         </span>
                     </a>
-                </li>
-                <li class="user-link mark-all-as-read">
-                    <span class="title icon-check"></span>
-                    <span class="selection">mark all as read</span>
                 </li>
                 <li class="user-link smaller log-out">
                     <a href="/logout/">

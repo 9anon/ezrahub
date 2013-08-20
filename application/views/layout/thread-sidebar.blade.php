@@ -16,7 +16,6 @@
                     <a href="/user/me/" <?php if (Auth::user()->messages_to()->where('read', '=', 0)->count() > 0) { echo 'class="unread"'; } ?>>
                         {{ Avatar::generate('medium', Auth::user()) }}
                         <span class="user-preview">
-                            {{ Reputation::generate(Auth::user()) }}
                             @if (Auth::user()->messages_to()->where('read', '=', 0)->count() > 0)
                                 <span class="messages-indicator">
                                     <span class="icon-envelope-alt"></span>
