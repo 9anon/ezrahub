@@ -166,7 +166,7 @@ header {
         float: left;
         width: 71px;
         height: 50px;
-        margin: 0 12px 0 0;
+        margin: 0 12px 0 2px;
         overflow: hidden;
 
         span.icon-home {
@@ -179,7 +179,7 @@ header {
 
     h1.title {
         float: left;
-        margin: 0 15px 0 0;
+        margin: 0 18px 0 4px;
         font-family: 'Lobster';
         font-size: 42px;
         line-height: 45px;
@@ -234,7 +234,7 @@ nav.user-nav {
     float: right;
 }
 
-@sidebar-width: 65px;
+@sidebar-width: 72.5px;
 
 div#threads-navigation {
     .border-sizing;
@@ -267,18 +267,20 @@ div#threads-navigation {
                 padding: 15px 5px;
                 width: @sidebar-width;
                 cursor: pointer;
+                line-height: 1;
 
                 span.title {
                     display: block;
                     font-size: 25px;
                     color: #bbb;
+                    margin: 0 0 5px 0;
                 }
 
                 span.selection {
-                    display: none;
                     font-size: 12px;
                     text-align: center;
                     cursor: pointer;
+                    line-height: 1;
                 }
 
                 span.user-preview {
