@@ -60,7 +60,7 @@
 <div id="thread-scroll-header">
     <h1 class="subtitle">eh <span class="version-number">v{{ Config::get('ezrahub.version_number') }}</span></h1>
     <h2>
-        <em>"{{ $thread->title }}"</em>
+        "{{ $thread->title }}"
         posted by
         {{ Avatar::generate('small', $thread->user) }}
         {{ $thread->user->name }}

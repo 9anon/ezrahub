@@ -21,14 +21,14 @@
                     <li class="previous-page">
                         <a href="/page/{{ $page_number - 1 }}">
                             <span class="title icon-chevron-sign-left"></span>
-                            <span class="selection">prev. pg.</span>
+                            <span class="selection">prev. page</span>
                         </a>
                     </li>
                 @endif
                     <li class="next-page">
                         <a href="/page/{{ $page_number + 1 }}">
                             <span class="title icon-chevron-sign-right"></span>
-                            <span class="selection">next pg.</span>
+                            <span class="selection">next page</span>
                         </a>
                     </li>
                 </ul>
