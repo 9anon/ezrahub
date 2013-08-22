@@ -920,12 +920,10 @@ $(function() {
             if (data.success == '1') {
                 //no errors, it worked, show success and play a sound (later)
                 $('input#post-new-message').removeClass('submitted').addClass('success').val('Success.');
-                $('form#new-message-form p.success').html('Message sent.').slideDown(400);
                 //empty the textarea
                 $('#new-message-form textarea').val('');
                 setTimeout(function() {
                     $('input#post-new-message').val('Send another message').removeClass('success');
-                    $('form#new-message-form p.success').fadeOut(150);
                 }, 1500);
             } else {
                 //do some fancy animation stuff

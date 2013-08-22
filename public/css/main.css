@@ -1764,6 +1764,10 @@ div.image-float-box {
 
         div.user-profile-item.new-message {
 
+            p {
+                padding: 0 18px;
+            }
+
             div#new-message {
                 padding: 0;
             }
