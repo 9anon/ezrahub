@@ -5,7 +5,9 @@
     </div>
     <div id="op-post" <?php if ($thread->user->id == 0) { echo 'class="anon-coward"'; } ?> data-post-id="{{ $op->id }}">
         <div class="post-header">
-            {{ Avatar::generate('medium', $thread->user) }}
+            <a href="/user/{{ $thread->user->name }}">
+                {{ Avatar::generate('medium', $thread->user) }}
+            </a>
             <h2 class="op-title">
                 {{ $thread->title }}
             </h2>
