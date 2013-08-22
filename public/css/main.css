@@ -1660,7 +1660,6 @@ div.image-float-box {
         }
 
         div.user-profile-item {
-            padding: 15px 20px;
 
             div.latest-post {
                 .border-sizing;
@@ -1696,7 +1695,6 @@ div.image-float-box {
         }
 
         div.user-profile-item.messages {
-            padding: 0;
 
             #message-reading-pane-header {
                 .border-sizing;
@@ -1729,7 +1727,6 @@ div.image-float-box {
         }
 
         div.user-profile-item.latest-posts {
-            padding: 0;
 
             p.no-posts-yet {
                 padding: 0 0 0 18px;
@@ -1774,7 +1771,6 @@ div.image-float-box {
         }
 
         div.user-profile-item.latest-reps {
-            padding: 0;
 
             div#rep-tally {
                 .border-sizing;
