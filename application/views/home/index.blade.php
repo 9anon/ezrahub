@@ -4,10 +4,32 @@
         <div id="no-sort-header">
             <div class="no-sort-header-column">
                 @if ($page_number == 1)
-                    Welcome to the brand new <span class="ezra-hub">ezra hub</span> beta test, @include('home.taglines')
+                    Welcome to <span class="ezra-hub">ezra hub</span> v0.9b, @include('home.taglines')
                 @else
-                    Viewing page {{ $page_number }} of results (threads {{ Config::get('ezrahub.num_homepage_threads') * ($page_number - 1) }}-{{ Config::get('ezrahub.num_homepage_threads') * ($page_number) }} out of {{ Thread::count() }} total on Ezra Hub).
+                    Page {{ $page_number }} out of {{ $max_pages }} (threads {{ Config::get('ezrahub.num_homepage_threads') * ($page_number - 1) }}-{{ Config::get('ezrahub.num_homepage_threads') * ($page_number) }} out of {{ Thread::count() }}).
                 @endif
+                <ul>
+                @if ($page_number != 1)
+                    <li class="first-page">
+                        <a href="/">
+                            <span class="title icon-chevron-sign-up"></span>
+                            <span class="selection">home</span>
+                        </a>
+                    </li>
+                    <li class="previous-page">
+                        <a href="/page/{{ $page_number - 1 }}">
+                            <span class="title icon-chevron-sign-left"></span>
+                            <span class="selection">prev. pg.</span>
+                        </a>
+                    </li>
+                @endif
+                    <li class="next-page">
+                        <a href="/page/{{ $page_number + 1 }}">
+                            <span class="title icon-chevron-sign-right"></span>
+                            <span class="selection">next pg.</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
             <div class="no-sort-header-column"><span class="icon-left icon-align-left"></span> Replies</div>
             <div class="no-sort-header-column"><span class="icon-left icon-comment"></span> Last post</div>

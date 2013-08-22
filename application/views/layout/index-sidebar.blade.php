@@ -7,26 +7,6 @@
                     <span class="selection">new thread</span>
                 </a>
             </li>
-            @if ($page_number != 1)
-                <li class="browse option first-page">
-                    <a href="/">
-                        <span class="title icon-chevron-sign-up"></span>
-                        <span class="selection">first page</span>
-                    </a>
-                </li>
-                <li class="browse option previous-page">
-                    <a href="/page/{{ $page_number - 1 }}">
-                        <span class="title icon-chevron-sign-left"></span>
-                        <span class="selection">prev. page</span>
-                    </a>
-                </li>
-            @endif
-            <li class="browse option next-page">
-                <a href="/page/{{ $page_number + 1 }}">
-                    <span class="title icon-chevron-sign-right"></span>
-                    <span class="selection">next page</span>
-                </a>
-            </li>
             @if (Auth::check())
                 <li class="user-link mark-all-as-read" data-page-number="{{ $page_number }}">
                     <span class="title icon-check"></span>
