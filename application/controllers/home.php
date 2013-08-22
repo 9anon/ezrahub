@@ -9,7 +9,7 @@ class Home_Controller extends Base_Controller {
 		if (empty($threads)) {
 			$this->layout->nest('content', 'home.nothreadsyet');
 		} else {
-			$this->layout->nest('content', 'home.index', array('threads' => $threads));
+			$this->layout->nest('content', 'home.index', array('threads' => $threads, 'page_number' => 1));
 		}
 	}
 
@@ -24,7 +24,7 @@ class Home_Controller extends Base_Controller {
             if (empty($threads)) {
                 $this->layout->nest('content', 'home.nothreadsyet');
             } else {
-                $this->layout->nest('content', 'home.index', array('threads' => $threads));
+                $this->layout->nest('content', 'home.index', array('threads' => $threads, 'page_number' => $page_number));
             }
         } else {
             //skip all threads on pages before this one
@@ -32,7 +32,7 @@ class Home_Controller extends Base_Controller {
             $threads = Thread::order_by('sticky', 'desc')->order_by('updated_at', 'desc')->skip($multiplier * Config::get('ezrahub.num_homepage_threads'))->take(Config::get('ezrahub.num_homepage_threads'))->get();
             Section::inject('title', 'Page ' . $page_number);
             Section::inject('description', 'Ezra Hub is a popular and student-run forum for Cornell University students. Anonymous posting and user accounts are allowed and everything from frats, sororities, classes, drugs, housing and more is discussed. Ezra Hub is not endorsed by Cornell University.');
-            $this->layout->nest('content', 'home.index', array('threads' => $threads));
+            $this->layout->nest('content', 'home.index', array('threads' => $threads, 'page_number' => $page_number));
         }
     }
 

@@ -24,7 +24,7 @@ return array(
     |
     */
 
-    'num_homepage_threads'   => 50,
+    'num_homepage_threads'   => 25,
 
 
     /*

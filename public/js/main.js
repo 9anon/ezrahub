@@ -183,7 +183,7 @@ $(function() {
     $(document).on('click', 'li.new-thread', function() {
         $('div#no-sort-view').fadeOut(150);
         $('div#new-thread-container').fadeIn(300);
-        $('li.user-link.mark-all-as-read').fadeOut(300);
+        $('li.user-link.mark-all-as-read, li.next-page').fadeOut(300);
         $(this).removeClass('new-thread').addClass('hide-new-thread').html('<span class="title icon-reply"></span>');
         //size the textarea for the new thread form
         var new_height = $(window).height() - $('header').height() - $('footer').height() - $('#new-thread input#title').height() - $('#new-thread div.textarea-formatting').height() - 25;
@@ -246,7 +246,7 @@ $(function() {
     $(document).on('click', 'li.hide-new-thread', function() {
         $('#new-thread-container').hide();
         $('div#no-sort-view').fadeIn(300);
-        $('li.user-link.mark-all-as-read').fadeIn(600);
+        $('li.user-link.mark-all-as-read, li.next-page').fadeIn(600);
         $(this).removeClass('hide-new-thread').addClass('new-thread').html('<a href="/thread/new"><span class="title icon-edit"></span><span class="selection">new thread</span></a>');
     });
 
@@ -423,7 +423,7 @@ $(function() {
         //show we are submitting
         $('input.submit-rep').addClass('submitted').val('Submitting...');
         //send the post request
-        $.post('/rep/' + action + '/' + target, $('form#submit-rep-form').serializeObject(), function(data)
+        $.post('/rep/' + action + '/' + target, $('form#submit-rep-form').serializeObject(), function(data) {
             if (data.success == '0') {
                 //get the error messages
                 var error_messages = [];
