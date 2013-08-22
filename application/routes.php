@@ -100,7 +100,7 @@ Route::group(array('before' => 'auth'), function(){
     Route::post('user/email/edit', 'user@edit_email');
 
     //thread stuff
-    Route::get('thread/read/all', 'thread@read_all');
+    Route::post('thread/read/page/(:num)', 'thread@read_all');
     Route::get('thread/random', 'thread@random');
 
     //post and thread deletion/editing

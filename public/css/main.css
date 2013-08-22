@@ -648,7 +648,6 @@ div.thread-column.thread-replies {
 
         span.no-replies {
             font-size: 11px;
-            color: #ddd;
         }
 
         span.most-replies {
@@ -666,11 +665,9 @@ div.thread-column.thread-replies {
         }
 
         span.some-replies {
-            color: #999;
         }
 
         span.one-reply {
-            color: #ccc;
         }
 
         span > span {

@@ -28,7 +28,7 @@
                 </a>
             </li>
             @if (Auth::check())
-                <li class="user-link mark-all-as-read">
+                <li class="user-link mark-all-as-read" data-page-number="{{ $page_number }}">
                     <span class="title icon-check"></span>
                     <span class="selection">mark all as read</span>
                 </li>

@@ -200,7 +200,7 @@ class Thread_Controller extends Base_Controller {
         }
     }
 
-    public function action_read_all() {
+    public function action_read_all($page_number) {
         $user_id = Auth::user()->id;
         foreach (Thread::all() as $thread) {
             $thread->mark_as_read($user_id);

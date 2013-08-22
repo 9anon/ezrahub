@@ -65,8 +65,6 @@ $(function() {
         if ($('#thread').length > 0) {
             //we are on a thread page
             poll_thread();
-        } else {
-            console.log('we are not polling here');
         }
     }, 10000);
 
@@ -378,12 +376,10 @@ $(function() {
 
     //mark all as read
     $('li.user-link.mark-all-as-read').click(function() {
-        $.get('thread/read/all', function(data) {
-            //reset the selection window
-            $('li.browse-option').removeClass('active');
-            $('div.selection-window').fadeOut(150);
-            //hide the unread icons
-            $('div.thread-row.unread').removeClass('unread');
+        var page_number = $(this).attr('data-page-number');
+        $.post('thread/read/page/' + page_number, function(data) {
+            //hide the unread icons on the page
+            $('div.thread-row.unread').removeClass('unread').find('span.icon-unread').remove();
         });
         return false;
     });
