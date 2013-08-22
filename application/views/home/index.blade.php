@@ -8,7 +8,7 @@
                     Welcome to <span class="ezra-hub">ezra hub</span> v{{ Config::get('ezrahub.version_number') }}, @include('home.taglines')
                 @else
                     <h1 class="subtitle">eh <span class="version-number">v{{ Config::get('ezrahub.version_number') }}</span></h1>
-                    Page {{ $page_number }} out of {{ $max_pages }} (threads {{ Config::get('ezrahub.num_homepage_threads') * ($page_number - 1) }}-{{ Config::get('ezrahub.num_homepage_threads') * ($page_number) }} out of {{ Thread::count() }}).
+                    Page {{ $page_number }} out of {{ $max_pages }} (threads {{ Config::get('ezrahub.num_homepage_threads') * ($page_number - 1) }}-{{ Config::get('ezrahub.num_homepage_threads') * ($page_number) }} out of {{ Thread::count() }})
                 @endif
                 <ul>
                 @if ($page_number != 1)
