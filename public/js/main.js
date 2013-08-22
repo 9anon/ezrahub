@@ -226,7 +226,25 @@ $(function() {
         $('div#new-thread-container').fadeIn(300);
         $('li.user-link.mark-all-as-read').fadeOut(300);
         $(this).removeClass('new-thread').addClass('hide-new-thread').html('<span class="title icon-reply"></span>');
+        //size the textarea for the new thread form
+        var new_height = $(window).height() - $('header').height() - $('footer').height() - $('#new-thread input#title').height() - $('#new-thread div.textarea-formatting').height() - 25;
+        $('#new-thread textarea#post-body').css('height', new_height + 'px');
         return false;
+    });
+
+    //also size textarea correctly when the window resizes
+    $(window).resize(function() {
+        var new_height = $(window).height() - $('header').height() - $('footer').height() - $('#new-thread input#title').height() - $('#new-thread div.textarea-formatting').height() - 25;
+        $('#new-thread textarea#post-body').css('height', new_height + 'px');
+    });
+
+    //and when the window resizes
+    $(window).resize(function() {
+        //work out what the new width will be
+        var old_width = parseInt($('div.main-section').css('width'), 10);
+        var new_width = old_width - 0.05*old_width - 40;
+        //apply the new width
+        $('div.thread-column.thread-title, div.thread-column.thread-title h3').css('width', new_width + 'px');
     });
 
     //anti-robot verification
