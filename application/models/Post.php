@@ -10,7 +10,8 @@ class Post extends Eloquent {
     }
 
     public function set_body($body) {
-        $this->set_attribute('body', htmlentities(trim($body)));
+        $body = str_ireplace(array("<script>", "</script>"), "", $body);
+        $this->set_attribute('body', trim($body));
     }
 
     //getters

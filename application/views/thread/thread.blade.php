@@ -68,8 +68,6 @@
         {{ $thread->user->name }}
         {{ Reputation::generate($thread->user) }}
         {{ Prettyprint::time($thread->created_at) }}
-        on
-        {{ date("l, F j, Y", strtotime($thread->created_at)) . ' at ' . date("g:i a", strtotime($thread->created_at)) }}
     </h2>
     <div class="clear both"></div>
 </div>

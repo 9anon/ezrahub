@@ -1465,7 +1465,7 @@ input#post-new-reply, input#post-new-thread {
     display: inline-block;
     float: right;
     height: @formatting-bar-height;
-    width: 275px;
+    width: 250px;
     margin: 0;
 }
 

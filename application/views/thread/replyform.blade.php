@@ -3,7 +3,6 @@
         {{ Form::open('post/new/' .  $thread->id, 'POST', array('id' => 'new-reply-form')); }}
         <div class='textarea-container'>
             <div class='textarea-formatting'>
-                Write a reply:
                 <span title='bold' data-action='bold' class='format-icon icon-bold'></span>
                 <span title='italic' data-action='italic' class='format-icon icon-italic'></span>
                 <span title='heading' data-action='heading' class='format-icon icon-exclamation'></span>
@@ -24,7 +23,7 @@
                     </span>
                 </div>
                 <div class="submit-container">
-                    {{ Form::submit('Post a new reply to this thread', array('id' => 'post-new-reply')); }}
+                    {{ Form::submit('Post a new reply', array('id' => 'post-new-reply')); }}
                     <div class="no-bump">
                         Nope <span class="icon-right icon-unchecked"></span>
                     </div>
@@ -38,7 +37,7 @@
             </div>
             <p class="errors"></p>
             {{ Form::label('post-body', 'Body:'); }}
-            {{ Form::textarea('post-body', null, array('placeholder' => 'Start writing here...', 'class' => 'enhanced')); }}
+            {{ Form::textarea('post-body', null, array('placeholder' => 'Start writing your reply here...', 'class' => 'enhanced')); }}
         </div>
         {{ Form::honeypot('date', 'date_time') }}
         <div class="clear both"></div>
