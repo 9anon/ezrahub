@@ -83,7 +83,7 @@ class BBCode {
 
         // Replace [quote="person"]...[/quote] with <blockquote><p>...</p></blockquote>
         $matches["/\[quote=\"([^\"]+)\"\](.*?)\[\/quote\]/is"] = function($match) {
-            return BBCode::quote('<span class="quoted-user">' . $match[1] . '</span> wrote: ' . $match[2]);
+            return BBCode::quote('<span class="quoted-user">' . $match[1] . ' wrote:</span> ' . $match[2]);
         };
 
         // Replace [h]...[/h] with <h5>...</h5>

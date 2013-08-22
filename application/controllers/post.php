@@ -95,14 +95,14 @@ class Post_Controller extends Base_Controller {
         $poster_name = $post->user->name;
 
         //strip any other quotes out of there so we don't get double quotes
-        $body_without_quotes = preg_replace('/\[quote=\"([^\"]+)\"\](.*?)\[\/quote\]/is', '', $post->body_raw);
+        $body_stripped = preg_replace('/\[quote=\"([^\"]+)\"\](.*?)\[\/quote\]/is', '', $post->body_raw);
         //strip out quotes if they aren't to a user, as well
-        $body_without_quotes = preg_replace('/\[quote\](.*?)\[\/quote\]/is', '', $body_without_quotes);
+        $body_stripped = preg_replace('/\[quote\](.*?)\[\/quote\]/is', '', $body_stripped);
         //strip out images
-        $body_without_quotes = preg_replace('/\[img\](.*?)\[\/img\]/is', '', $body_without_quotes);
+        $body_stripped = preg_replace('/\[img\](.*?)\[\/img\]/is', '', $body_stripped);
 
         //return the content
-        return Response::json(array('content' => '[quote="' . $poster_name . '"]' . trim($body_without_quotes) . '[/quote]'));
+        return Response::json(array('content' => '[quote="' . $poster_name . '"]' . trim($body_stripped) . '[/quote]'));
     }
 
     public function action_edit_form($post_id) {
