@@ -21,3 +21,19 @@
         @include('thread.new')
     </div>
 </div>
+<div id="pagination">
+    Pagination:
+    @if (max($page_number - 15, 1) != 1)
+        <a href="/page/{{ $page_number - 15 }}" class="page-link"><span class="icon-circle-arrow-left"></span> (back 15 pages)</a>
+    @endif
+    @for ($i = max($page_number - 15, 1); $i <= min($max_pages, $page_number + 15); $i++)
+        @if ($i == $page_number)
+            <span class="page-link-current">{{ $i }}</span>
+        @else
+            <a href="/page/{{ $i }}" class="page-link">{{ $i }}</a>
+        @endif
+    @endfor
+    @if (min($max_pages, $page_number + 15) != $max_pages)
+        <a href="/page/{{ $page_number + 15 }}" class="page-link"><span class="icon-circle-arrow-right"></span> (forward 15 pages)</a>
+    @endif
+</div>

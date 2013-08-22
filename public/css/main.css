@@ -75,7 +75,7 @@ img {
 
 a, a:visited {
     text-decoration: none;
-    color: #08c;
+    color: #3b8bba;
     outline: 0 !important;
     border: 0 !important;
 }
@@ -425,8 +425,8 @@ span.highlight {
 
     div.no-sort-header-column:nth-child(2) {
         width: 14%;
-        padding-left: 2.5%;
         font-size: 13px;
+        text-align: center;
     }
 
     div.no-sort-header-column:nth-child(3) {
@@ -700,6 +700,26 @@ span.post-ago {
     }
 }
 
+/*pagination*/
+#pagination {
+    background: #292929;
+    .border-sizing;
+    width: 100%;
+    padding: 12px 18px;
+    color: #d0d0d0;
+    font-size: 15px;
+
+    a, span.page-link-current {
+        margin: 0 4px;
+        line-height: 1.7;
+    }
+
+    span.page-link-current {
+        color: #aaa;
+        padding: 3px 7px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
 
 /*Single thread view*/
 #thread {
