@@ -746,6 +746,10 @@ span.post-ago {
         padding: 3px 7px;
         background: rgba(255, 255, 255, 0.1);
     }
+
+    span.total-pages {
+        color: #777;
+    }
 }
 
 /*Single thread view*/

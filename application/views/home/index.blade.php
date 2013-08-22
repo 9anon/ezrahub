@@ -66,4 +66,7 @@
     @if (min($max_pages, $page_number + 10) != $max_pages)
         <a href="/page/{{ $page_number + 10 }}" class="page-link"><span class="icon-circle-arrow-right"></span> (forward 10 pages)</a>
     @endif
+    <span class="total-pages">
+        {{ $max_pages }} pages total
+    </span>
 </div>
