@@ -47,17 +47,23 @@
 </div>
 <div id="pagination">
     Pagination:
-    @if (max($page_number - 15, 1) != 1)
-        <a href="/page/{{ $page_number - 15 }}" class="page-link"><span class="icon-circle-arrow-left"></span> (back 15 pages)</a>
+    @if (max($page_number - 10, 1) != 1)
+        <a href="/page/{{ $page_number - 10 }}" class="page-link"><span class="icon-circle-arrow-left"></span> (back 10 pages)</a>
     @endif
-    @for ($i = max($page_number - 15, 1); $i <= min($max_pages, $page_number + 15); $i++)
+    @if ($page_number - 1 >= 1)
+        <a href="/page/{{ $page_number - 1 }}"><span class="title icon-chevron-sign-left"></span> previous page</a>
+    @endif
+    @for ($i = max($page_number - 10, 1); $i <= min($max_pages, $page_number + 10); $i++)
         @if ($i == $page_number)
             <span class="page-link-current">{{ $i }}</span>
         @else
             <a href="/page/{{ $i }}" class="page-link">{{ $i }}</a>
         @endif
     @endfor
-    @if (min($max_pages, $page_number + 15) != $max_pages)
-        <a href="/page/{{ $page_number + 15 }}" class="page-link"><span class="icon-circle-arrow-right"></span> (forward 15 pages)</a>
+    @if ($page_number + 1 <= $max_pages)
+        <a href="/page/{{ $page_number + 1 }}"><span class="title icon-chevron-sign-right"></span> next page</a>
+    @endif
+    @if (min($max_pages, $page_number + 10) != $max_pages)
+        <a href="/page/{{ $page_number + 10 }}" class="page-link"><span class="icon-circle-arrow-right"></span> (forward 10 pages)</a>
     @endif
 </div>
