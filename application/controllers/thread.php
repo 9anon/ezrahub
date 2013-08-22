@@ -202,7 +202,9 @@ class Thread_Controller extends Base_Controller {
 
     public function action_read_all($page_number) {
         $user_id = Auth::user()->id;
-        foreach (Thread::all() as $thread) {
+        $multiplier = $page_number - 1;
+        $threads_to_mark = Thread::order_by('sticky', 'desc')->order_by('updated_at', 'desc')->skip($multiplier * Config::get('ezrahub.num_homepage_threads'))->take(Config::get('ezrahub.num_homepage_threads'))->get();
+        foreach ($threads_to_mark as $thread) {
             $thread->mark_as_read($user_id);
         }
         return Response::json(array('success' => '1'));

@@ -377,9 +377,11 @@ $(function() {
     //mark all as read
     $('li.user-link.mark-all-as-read').click(function() {
         var page_number = $(this).attr('data-page-number');
+         $('#loading-indicator').fadeIn(150);
         $.post('thread/read/page/' + page_number, function(data) {
             //hide the unread icons on the page
             $('div.thread-row.unread').removeClass('unread').find('span.icon-unread').remove();
+             $('#loading-indicator').fadeOut(150);
         });
         return false;
     });
