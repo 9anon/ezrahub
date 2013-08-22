@@ -763,8 +763,8 @@ span.post-ago {
     width: 100%;
     padding-left: 15px;
     background: #292929;
-    height: 35px;
-    line-height: 35px;
+    height: 40px;
+    line-height: 40px;
     color: #d0d0d0;
     font-size: 15px;
 }
@@ -1186,7 +1186,7 @@ textarea.enhanced {
     border: none;
 }
 
-@formatting-bar-height: 50px;
+@formatting-bar-height: 45px;
 div.textarea-formatting {
     .border-sizing;
     margin: 0;
@@ -1472,7 +1472,7 @@ input#post-new-reply, input#post-new-thread {
 div.not-a-robot {
     display: inline-block;
     float: right;
-    height: 50px;
+    height: @formatting-bar-height;
     width: 135px;
     margin: 0;
     background: #ec4000;
@@ -1488,7 +1488,7 @@ div.not-a-robot.confirmed {
 div.become-anon {
     display: inline-block;
     float: right;
-    height: 50px;
+    height: @formatting-bar-height;
     width: 100px;
     margin: 0;
     background: #999;
@@ -1504,7 +1504,7 @@ div.become-anon.selected {
 div.no-bump {
     display: inline-block;
     float: right;
-    height: 50px;
+    height: @formatting-bar-height;
     width: 100px;
     margin: 0;
     background: #333;

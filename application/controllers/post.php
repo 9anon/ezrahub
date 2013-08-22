@@ -68,7 +68,7 @@ class Post_Controller extends Base_Controller {
             //save the post in the database
             $thread->posts()->insert($new_post);
 
-            if (isset($input['nobump']) && $input['nobump'] == 1 && !$thread->bumplock) {
+            if (!isset($input['nobump']) && !$thread->bumplock) {
                 //bump the thread
                 $thread->touch();
             }
