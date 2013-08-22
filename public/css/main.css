@@ -1507,14 +1507,14 @@ div.no-bump {
     height: 50px;
     width: 100px;
     margin: 0;
-    background: #555;
+    background: #333;
     color: #fff;
     text-align: center;
     cursor: pointer;
 }
 
 div.no-bump.selected {
-    background: #B01C2E;
+    background: #111;
 }
 
 

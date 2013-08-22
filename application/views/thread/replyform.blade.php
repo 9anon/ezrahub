@@ -25,15 +25,15 @@
                 </div>
                 <div class="submit-container">
                     {{ Form::submit('Post a new reply to this thread', array('id' => 'post-new-reply')); }}
+                    <div class="no-bump">
+                        Nope <span class="icon-right icon-unchecked"></span>
+                    </div>
                     @if (Auth::check())
                         <div class="become-anon">
                             Anon
                             <span class="icon-right icon-unchecked"></span>
                         </div>
                     @endif
-                    <div class="no-bump">
-                        Nope <span class="icon-right icon-unchecked"></span>
-                    </div>
                 </div>
             </div>
             <p class="errors"></p>
