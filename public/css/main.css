@@ -1222,7 +1222,6 @@ img.avatar.small {
     position: relative;
     vertical-align: middle;
     margin: 0 2px;
-    .rounded-corners(7px);
 }
 
 img.avatar.medium {
