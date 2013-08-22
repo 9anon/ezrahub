@@ -177,17 +177,26 @@ header {
         }
     }
 
-    h1.title {
-        float: left;
-        margin: 0 18px 0 4px;
-        font-family: 'Lobster';
-        font-size: 42px;
-        line-height: 45px;
-        color: #eee !important;
-        text-rendering: optimizelegibility;
-        -webkit-font-smoothing: antialiased;
-    }
+}
 
+h1.title, h1.subtitle {
+    float: left;
+    margin: 0 18px 0 4px;
+    font-family: 'Lobster';
+    font-size: 42px;
+    line-height: 45px;
+    color: #eee !important;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1.subtitle {
+    display: none;
+    margin: 0 18px 0 9px;
+
+    span.version-number {
+        font-size: 35px;
+    }
 }
 
 /*navigation*/
@@ -434,7 +443,7 @@ span.highlight {
             }
 
             li:hover {
-                background: rgba(0, 136, 204, 0.3);
+                background: rgba(255, 255, 255, 0.1);
             }
         }
     }
@@ -470,7 +479,7 @@ span.highlight {
     padding-left: 65px;
     z-index: +2;
     background: #b31b1b url('/img/ezra.png') no-repeat 2px 0;
-    color: #eee !important;
+    color: #ddd !important;
 }
 
 #thread-scroll-header {
@@ -485,24 +494,19 @@ span.highlight {
     height: 50px;
     line-height: 50px;
     background: #b31b1b url('/img/ezra.png') no-repeat 2px 0;
-    color: #eee !important;
+    color: #ddd !important;
 
     h2 {
         font-size: 15px;
         color: #fff;
 
-        span.ezra-hub {
-            font-size: 20px;
-            margin-left: 3px;
-        }
-
-        em {
-            margin-right: 2px;
-        }
-
         img.avatar {
             position: relative;
             top: -1px;
+        }
+
+        span.reputation {
+            margin: 0 4px;
         }
     }
 }

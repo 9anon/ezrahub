@@ -102,15 +102,19 @@ $(function() {
         //take care of the thread index header
         if ($(this).scrollTop() > 35 && $('#threads').length > 0) {
             $('div#no-sort-header').addClass('fixed');
+            $('h1.subtitle').show();
         } else {
             $('div#no-sort-header').removeClass('fixed');
+            $('h1.subtitle').hide();
         }
 
         //take care of the thread page header
         if ($(this).scrollTop() > 35 && $('#thread').length > 0) {
             $('div#thread-scroll-header').fadeIn(150);
+            $('h1.subtitle').show();
         } else {
             $('div#thread-scroll-header').fadeOut(150);
+            $('h1.subtitle').hide();
         }
     });
 

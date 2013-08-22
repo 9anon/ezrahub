@@ -58,14 +58,16 @@
     @include('thread.replyform')
 @endif
 <div id="thread-scroll-header">
+    <h1 class="subtitle">eh <span class="version-number">v{{ Config::get('ezrahub.version_number') }}</span></h1>
     <h2>
         <em>"{{ $thread->title }}"</em>
         posted by
         {{ Avatar::generate('small', $thread->user) }}
         {{ $thread->user->name }}
+        {{ Reputation::generate($thread->user) }}
         {{ Prettyprint::time($thread->created_at) }}
         on
-        <span class="ezra-hub">ezra hub</span>
+        {{ date("l, F j, Y", strtotime($thread->created_at)) . ' at ' . date("g:i a", strtotime($thread->created_at)) }}
     </h2>
     <div class="clear both"></div>
 </div>
