@@ -205,11 +205,27 @@ $(function() {
     //anti-robot verification
     $(document).on('click', 'div.not-a-robot', function() {
         if (!$(this).hasClass('confirmed')) {
-            $(this).addClass('confirmed');
-            $(this).children('span.icon-unchecked').removeClass('icon-unchecked').addClass('icon-check-sign');
+            $(this).addClass('confirmed').children('span.icon-unchecked').removeClass('icon-unchecked').addClass('icon-check-sign');
         } else {
-            $(this).removeClass('confirmed');
-            $(this).children('span.icon-check-sign').removeClass('icon-check-sign').addClass('icon-unchecked');
+            $(this).removeClass('confirmed').children('span.icon-check-sign').removeClass('icon-check-sign').addClass('icon-unchecked');
+        }
+    });
+
+    //become anon
+    $(document).on('click', 'div.become-anon', function() {
+        if (!$(this).hasClass('selected')) {
+            $(this).addClass('selected').children('span.icon-unchecked').removeClass('icon-unchecked').addClass('icon-user');
+        } else {
+            $(this).removeClass('selected').children('span.icon-user').removeClass('icon-user').addClass('icon-unchecked');
+        }
+    });
+
+    //nope submission
+    $(document).on('click', 'div.no-bump', function() {
+        if (!$(this).hasClass('selected')) {
+            $(this).addClass('selected').children('span.icon-unchecked').removeClass('icon-unchecked').addClass('icon-ban-circle');
+        } else {
+            $(this).removeClass('selected').children('span.icon-ban-circle').removeClass('icon-ban-circle').addClass('icon-unchecked');
         }
     });
 
@@ -223,10 +239,17 @@ $(function() {
                 form_data.robot = new Date().getTime();
             }
         }
+        //if we want to be anonymous
+        if ($('div.become-anon').length > 0) {
+            if ($('div.become-anon').hasClass('selected')) {
+                form_data.becomeanon = 1;
+            }
+        }
         //submit the form
         $.post('/thread/new/', form_data, function(data) {
             $('span.become-anon input[type="checkbox"]').attr('checked', false);
             $('div.not-a-robot').removeClass('confirmed').children('span.icon-check-sign').removeClass('icon-check-sign').addClass('icon-unchecked');
+            $('div.become-anon').removeClass('selected').children('span.icon-user').removeClass('icon-user').addClass('icon-unchecked');
             //reload the recaptcha
             if(typeof Recaptcha != 'undefined') {
                Recaptcha.reload();
@@ -257,11 +280,28 @@ $(function() {
 
     //submitting new reply form
     $('#new-reply-form').submit(function() {
+        //which thread is this?
         var thread_id = $('#thread').data('thread-id');
+        //collect info
+        var form_data = $('#new-reply-form').serializeObject();
+        //if we don't want to bump the thread
+        if ($('div.no-bump').length > 0) {
+            if ($('div.no-bump').hasClass('selected')) {
+                form_data.nobump = 1;
+            }
+        }
+        //if we want to be anonymous
+        if ($('div.become-anon').length > 0) {
+            if ($('div.become-anon').hasClass('selected')) {
+                form_data.becomeanon = 1;
+            }
+        }
         //update the submit button to say we are submitting
         $('input#post-new-reply').addClass('submitted').val('Submitting...');
         //submit the form
-        $.post('/post/new/' + thread_id, $('#new-reply-form').serializeObject(), function(data) {
+        $.post('/post/new/' + thread_id, form_data, function(data) {
+            $('div.become-anon').removeClass('selected').children('span.icon-user').removeClass('icon-user').addClass('icon-unchecked');
+            $('div.no-bump').removeClass('selected').children('span.icon-ban-circle').removeClass('icon-ban-circle').addClass('icon-unchecked');
             //reload the recaptcha
             if(typeof Recaptcha != 'undefined') {
                Recaptcha.reload();

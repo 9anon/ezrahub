@@ -24,11 +24,16 @@
                     </span>
                 </div>
                 <div class="submit-container">
-                    @if (Auth::check())
-                        <span class="become-anon">Anon: {{ Form::checkbox('becomeanon', 'value', false) }}</span>
-                    @endif
-                    <span class="no-bump">Nope: {{ Form::checkbox('nobump', 'value', false) }}</span>
                     {{ Form::submit('Post a new reply to this thread', array('id' => 'post-new-reply')); }}
+                    @if (Auth::check())
+                        <div class="become-anon">
+                            Anon
+                            <span class="icon-right icon-unchecked"></span>
+                        </div>
+                    @endif
+                    <div class="no-bump">
+                        Nope <span class="icon-right icon-unchecked"></span>
+                    </div>
                 </div>
             </div>
             <p class="errors"></p>

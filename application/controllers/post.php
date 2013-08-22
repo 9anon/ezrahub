@@ -15,7 +15,7 @@ class Post_Controller extends Base_Controller {
         $user_id = Auth::get_anon_or_user_id();
 
         //has the user requested to be anonymous?
-        if (isset($input['becomeanon'])) {
+        if (isset($input['becomeanon']) && $input['becomeanon'] == 1) {
             $user_id = 0;
         }
 
@@ -68,7 +68,7 @@ class Post_Controller extends Base_Controller {
             //save the post in the database
             $thread->posts()->insert($new_post);
 
-            if (!isset($input['nobump']) && !$thread->bumplock) {
+            if (isset($input['nobump']) && $input['nobump'] == 1 && !$thread->bumplock) {
                 //bump the thread
                 $thread->touch();
             }

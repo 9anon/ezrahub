@@ -1458,16 +1458,19 @@ div.rep-neg {
 }
 
 input#post-new-reply, input#post-new-thread {
+    display: inline-block;
+    float: right;
     height: @formatting-bar-height;
     width: 275px;
-    margin: 0 0 0 10px;
+    margin: 0;
 }
 
 div.not-a-robot {
     display: inline-block;
-    height: 41px;
+    float: right;
+    height: 50px;
     width: 135px;
-    margin: 0 -15px 0 0;
+    margin: 0;
     background: #ec4000;
     color: #fff;
     text-align: center;
@@ -1477,6 +1480,39 @@ div.not-a-robot {
 div.not-a-robot.confirmed {
     background: #00bf2d;
 }
+
+div.become-anon {
+    display: inline-block;
+    float: right;
+    height: 50px;
+    width: 100px;
+    margin: 0;
+    background: #999;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+div.become-anon.selected {
+    background: #777;
+}
+
+div.no-bump {
+    display: inline-block;
+    float: right;
+    height: 50px;
+    width: 100px;
+    margin: 0;
+    background: #555;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+div.no-bump.selected {
+    background: #B01C2E;
+}
+
 
 div.submit-container {
     input[type="checkbox"] {

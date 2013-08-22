@@ -29,14 +29,16 @@
                     </span>
                 </div>
                 <div class="submit-container">
+                    {{ Form::submit('Post a new thread', array('id' => 'post-new-thread')); }}
                     @if (Auth::check())
-                        <span class="become-anon">Anon: {{ Form::checkbox('becomeanon', 'value', false) }}</span>
+                        <div class="become-anon">
+                            Anon <span class="icon-right icon-unchecked"></span>
+                        </div>
                     @else
                         <div class="not-a-robot">
-                            I am a human <span class="icon-unchecked"></span>
+                            I am a human <span class="icon-right icon-unchecked"></span>
                         </div>
                     @endif
-                    {{ Form::submit('Post a new thread', array('id' => 'post-new-thread')); }}
                 </div>
             </div>
             <p class="errors"></p>
