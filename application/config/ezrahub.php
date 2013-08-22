@@ -37,12 +37,12 @@ return array(
     */
 
     //Thread/post constraints
-    'min_thread_title_length' => 3, /* in characters */
+    'min_thread_title_length' => 10, /* in characters */
     'max_thread_title_length' => 180,
     'min_thread_length' => 10,
-    'max_thread_length' => 10000,
-    'min_post_length' => 4, /* also applies for messages */
-    'max_post_length' => 5000,
+    'max_thread_length' => 15000,
+    'min_post_length' => 2, /* also applies for messages */
+    'max_post_length' => 10000,
 
     //Spam protection
     'honeytime' => 3, /* the min time in seconds a user must wait before submitting thread/post */
