@@ -143,15 +143,13 @@ Route::get('rules', 'home@rules');
 //route to go to about page
 Route::get('about', 'home@about');
 
+//homepage pages
+Route::get('page/(:num)', 'home@page');
+
 //homepage routes
-Route::get('topic/(:any)', 'home@get_with_topic');
 Route::get('/', 'home@index');
 Route::get('users/online', 'home@online_users');
 
-// auto homepage updating
-Route::post('homepage/update', 'home@update');
-//infinite scrolling
-Route::post('homepage/scroll', 'home@scroll');
 //search
 Route::post('search', 'home@search');
 

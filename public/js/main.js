@@ -20,31 +20,6 @@ $(function() {
         return o;
     };
 
-    function poll_index() {
-        //create an array of all thread ids on the board
-        var thread_ids = [];
-        $.each($('#no-sort-view div.thread-row'), function(key, value) {
-            thread_ids.push($(this).data('thread-id'));
-        });
-        //find out what the most recent one is (highest)
-        var latest_id = Array.max(thread_ids);
-        //make a post request to the update method with the highest id
-        $.post('/homepage/update', {'latest_id': latest_id}, function(data) {
-            if (data.update == '1') {
-                //there were new threads, prepend them to the list
-                if ($('div.thread-row.sticky').length > 0) {
-                    //there are stickied threads, append after the last one
-                    $(data.threads_html).hide().insertAfter('div.thread-row.sticky:last').fadeIn(600);
-                } else {
-                    //no sticky threads, just append to the top
-                    $(data.threads_html).hide().insertAfter('#no-sort-header').fadeIn(600);
-                }
-            }
-            //poll again in 15 seconds
-            setTimeout(poll_index, 15000);
-        });
-    }
-
     function poll_thread(){
         //create an array of all post ids on the board
         var post_ids = [];
@@ -82,18 +57,12 @@ $(function() {
     //initialize the inserted posts array if we are on a thread page
     if ($('#thread').length > 0) {
         window.inserted_posts = [];
-    } else if ($('#threads').length > 0) {
-        //we are on the index page, initialize infinite scrolling
-        window.scroll_iteration = 0;
     }
 
     //wait for 15 seconds until we initialize polling
     setTimeout(function () {
         //decide what we should poll, if anything
-        if ($('#threads').length > 0 && $('#threads').data('poll') == '1' && $('div.search-results-container').length == 0) {
-            //we are on the index page and we want to poll
-            poll_index();
-        } else if ($('#thread').length > 0) {
+        if ($('#thread').length > 0) {
             //we are on a thread page
             poll_thread();
         } else {
@@ -144,16 +113,6 @@ $(function() {
             $('div#thread-scroll-header').fadeIn(150);
         } else {
             $('div#thread-scroll-header').fadeOut(150);
-        }
-
-        //infinite scrolling for the homepage
-        if ($('#threads').length > 0 && $('div.search-results-container').length == 0 && $(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-            $('#loading-indicator').fadeIn(15);
-            $.post('/homepage/scroll', {'iteration': window.scroll_iteration}, function(data) {
-                window.scroll_iteration = window.scroll_iteration + 1;
-                $('#threads-container').append(data.threads_html);
-                $('#loading-indicator').fadeOut(15);
-            });
         }
     });
 
@@ -238,15 +197,6 @@ $(function() {
         $('#new-thread textarea#post-body').css('height', new_height + 'px');
     });
 
-    //and when the window resizes
-    $(window).resize(function() {
-        //work out what the new width will be
-        var old_width = parseInt($('div.main-section').css('width'), 10);
-        var new_width = old_width - 0.05*old_width - 40;
-        //apply the new width
-        $('div.thread-column.thread-title, div.thread-column.thread-title h3').css('width', new_width + 'px');
-    });
-
     //anti-robot verification
     $(document).on('click', 'div.not-a-robot', function() {
         if (!$(this).hasClass('confirmed')) {
@@ -268,7 +218,6 @@ $(function() {
                 form_data.robot = new Date().getTime();
             }
         }
-        console.log(form_data);
         //submit the form
         $.post('/thread/new/', form_data, function(data) {
             $('span.become-anon input[type="checkbox"]').attr('checked', false);
@@ -474,8 +423,7 @@ $(function() {
         //show we are submitting
         $('input.submit-rep').addClass('submitted').val('Submitting...');
         //send the post request
-        $.post('/rep/' + action + '/' + target, $('form#submit-rep-form').serializeObject(), function(data) {
-            console.log(data);
+        $.post('/rep/' + action + '/' + target, $('form#submit-rep-form').serializeObject(), function(data)
             if (data.success == '0') {
                 //get the error messages
                 var error_messages = [];

@@ -13,6 +13,29 @@ class Home_Controller extends Base_Controller {
 		}
 	}
 
+    public function action_page($page_number) {
+        if ($page_number < 1) {
+            //can't have a negative page number, or page 0
+            return Response::error('404');
+        } elseif ($page_number == 1) {
+            $threads = Thread::order_by('sticky', 'desc')->order_by('updated_at', 'desc')->take(Config::get('ezrahub.num_homepage_threads'))->get();
+            Section::inject('title', 'a forum for Cornell University students');
+            Section::inject('description', 'Ezra Hub is a popular and student-run forum for Cornell University students. Anonymous posting and user accounts are allowed and everything from frats, sororities, classes, drugs, housing and more is discussed. Ezra Hub is not endorsed by Cornell University.');
+            if (empty($threads)) {
+                $this->layout->nest('content', 'home.nothreadsyet');
+            } else {
+                $this->layout->nest('content', 'home.index', array('threads' => $threads));
+            }
+        } else {
+            //skip all threads on pages before this one
+            $multiplier = $page_number - 1;
+            $threads = Thread::order_by('sticky', 'desc')->order_by('updated_at', 'desc')->skip($multiplier * Config::get('ezrahub.num_homepage_threads'))->take(Config::get('ezrahub.num_homepage_threads'))->get();
+            Section::inject('title', 'Page ' . $page_number);
+            Section::inject('description', 'Ezra Hub is a popular and student-run forum for Cornell University students. Anonymous posting and user accounts are allowed and everything from frats, sororities, classes, drugs, housing and more is discussed. Ezra Hub is not endorsed by Cornell University.');
+            $this->layout->nest('content', 'home.index', array('threads' => $threads));
+        }
+    }
+
     public function action_search() {
         $query = trim(Input::get('query'));
         $matches = Thread::where('title', 'LIKE', '%' . $query . '%')->order_by('updated_at', 'desc')->take(Config::get('ezrahub.num_homepage_threads'))->get();
