@@ -103,11 +103,9 @@ $(function() {
         if ($(this).scrollTop() > 35 && $('#threads').length > 0) {
             $('div#no-sort-header').addClass('fixed');
             $('h1.subtitle').show();
-            console.log('showing subtitle');
         } else if ($('#threads').length > 0) {
             $('div#no-sort-header').removeClass('fixed');
             $('h1.subtitle').hide();
-            console.log('hiding subtitle');
         }
 
         //take care of the thread page header
@@ -117,7 +115,6 @@ $(function() {
         } else if ($('#thread').length > 0) {
             $('div#thread-scroll-header').fadeOut(150);
             $('h1.subtitle').hide();
-            console.log('hiding subtitle for thread');
         }
     });
 
