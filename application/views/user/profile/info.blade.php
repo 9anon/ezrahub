@@ -4,9 +4,9 @@
         <b>Reputation:</b>
         {{ Reputation::generate($user) }}
     </p>
-    <p>
-        <b>Groups:</b>
-        @if ($user->has_role('admin') || $user->has_role('mod'))
+    @if ($user->has_role('admin') || $user->has_role('mod'))
+        <p>
+            <b>Responsibilities:</b>
             <span class="group">
                 @if ($user->has_role('admin'))
                     <span class="icon-key" title="admin"></span>
@@ -14,10 +14,8 @@
                     <span class="icon-bolt" title="mod"></span>
                 @endif
             </span>
-        @else
-            <span class="faded-out">none</span>
-        @endif
-    </p>
+        </p>
+    @endif
     <p>
         <b>Join date:</b>
         <span class="join-date">
