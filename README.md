@@ -4,8 +4,7 @@ Ezra Hub is a clean, modern, Ajax-enabled and feature-rich forum that builds upo
 Ezra Hub's main implementation is on [ezrahub.com](http://ezrahub.com) and is catered towards Cornell University students.
 
 ### Feature Overview
-- Infinite-scrolling threads view on homepage
-- Fully Ajax-enabled and near-real-time thread/index updating as well as thread/post submission
+- Fully Ajax-enabled and near-real-time thread updating as well as thread/post submission
 - Configurable variables in an easy-to-edit configuration file
 - Anonymous posting w/ restrictions
 - User accounts w/ extra features and functionality
@@ -13,18 +12,19 @@ Ezra Hub's main implementation is on [ezrahub.com](http://ezrahub.com) and is ca
 - "Nope" feature to avoid bumping a thread
 - Robust reputation system similar to that seen on the [bodybuilding.com forums](http://forum.bodybuilding.com/faq.php?faq=repuationsystem_faq)
 - User-to-user private messaging
-- Spam-protection features for anonymous posters
+- Very robust spam-protection features for anonymous posters
 - Ezra-Hub-flavored [BBCode](http://en.wikipedia.org/wiki/BBCode) post markup w/ click-to-insert
 - YouTube video embedding
 - Post-quoting
 - Stickying threads
 - Locking threads
 - Bumplocking threads
+- Pagination and easy page navigation
 - Banning users and IP addresses
 - User profile pages
 - User biographies and reputation history
 - Thread and post search
-- Real-time post and thread statistics + [SMOG](http://en.wikipedia.org/wiki/SMOG) index rating
+- Real-time post and thread statistics while writing + [SMOG](http://en.wikipedia.org/wiki/SMOG) index rating
 
 ### Requirements
 Ezra Hub's requirements mirror the requirements of Laravel. If you cannot successfully run Laravel, you will not be able to run Ezra Hub. To use Laravel you will need:
