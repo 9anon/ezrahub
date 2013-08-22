@@ -283,6 +283,10 @@ div#threads-navigation {
                     line-height: 1;
                 }
 
+                span.reputation {
+                    margin: 8px 0 0 0;
+                }
+
                 span.user-preview {
                     font-size: 12px;
                     text-align: center;
