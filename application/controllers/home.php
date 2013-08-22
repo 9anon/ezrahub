@@ -45,24 +45,6 @@ class Home_Controller extends Base_Controller {
         $this->layout->nest('content', 'home.searchresults', array('threads' => $matches, 'query' => $query));
     }
 
-    public function action_scroll() {
-        $iteration = (int) Input::get('iteration');
-        $new_threads = Thread::order_by('updated_at', 'desc')->skip(Config::get('ezrahub.num_homepage_threads') + 15 * $iteration)->where('sticky', '<>', '1')->take(15)->get();
-        return Response::json(array('threads_html' => View::make('home.threads', array('threads' => $new_threads))->render()));
-    }
-
-	public function action_update() {
-        $latest_id = Input::get('latest_id');
-        $new_threads = Thread::where('id', '>', $latest_id)->order_by('updated_at', 'desc')->get();
-
-        if (!empty($new_threads)) {
-        	return Response::json(array('update' => '1', 'threads_html' => View::make('home.threads', array('threads' => $new_threads))->render()));
-        } else {
-        	return Response::json(array('update' => '0'));
-        }
-
-    }
-
     public function action_online_users() {
         return View::make('home.onlineusers');
     }
