@@ -183,19 +183,25 @@ $(function() {
 
     //new thread form show
     $(document).on('click', 'li.new-thread', function() {
-        $('div#no-sort-view').fadeOut(150);
+        $('div#no-sort-view, #pagination').fadeOut(150);
         $('div#new-thread-container').fadeIn(300);
         $('li.user-link.mark-all-as-read, li.next-page').fadeOut(300);
         $(this).removeClass('new-thread').addClass('hide-new-thread').html('<span class="title icon-reply"></span>');
         //size the textarea for the new thread form
-        var new_height = $(window).height() - $('header').height() - $('footer').height() - $('#new-thread input#title').height() - $('#new-thread div.textarea-formatting').height() - 25;
+        var new_height = $(window).height() - $('header').height() - $('footer').height() - $('#new-thread input#title').height() - $('#new-thread div.textarea-formatting').height() - 25 /* account for padding */;
+        if ($('#anon-coward-form').length > 0) {
+            new_height = new_height - $('#anon-coward-form').height() - 20 /* account for padding */;
+        }
         $('#new-thread textarea#post-body').css('height', new_height + 'px');
         return false;
     });
 
     //also size textarea correctly when the window resizes
     $(window).resize(function() {
-        var new_height = $(window).height() - $('header').height() - $('footer').height() - $('#new-thread input#title').height() - $('#new-thread div.textarea-formatting').height() - 25;
+        var new_height = $(window).height() - $('header').height() - $('footer').height() - $('#new-thread input#title').height() - $('#new-thread div.textarea-formatting').height() - 25 /* account for padding */;
+        if ($('#anon-coward-form').length > 0) {
+            new_height = new_height - $('#anon-coward-form').height() - 20 /* account for padding */;
+        }
         $('#new-thread textarea#post-body').css('height', new_height + 'px');
     });
 
@@ -270,7 +276,7 @@ $(function() {
     //hide new thread form and go back to browsing
     $(document).on('click', 'li.hide-new-thread', function() {
         $('#new-thread-container').hide();
-        $('div#no-sort-view').fadeIn(300);
+        $('div#no-sort-view, #pagination').fadeIn(300);
         $('li.user-link.mark-all-as-read, li.next-page').fadeIn(600);
         $(this).removeClass('hide-new-thread').addClass('new-thread').html('<a href="/thread/new"><span class="title icon-edit"></span><span class="selection">new thread</span></a>');
     });
