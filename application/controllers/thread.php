@@ -20,7 +20,7 @@ class Thread_Controller extends Base_Controller {
             //return the view
             $this->layout->nest('content', 'thread.thread', array('thread' => $thread, 'op' => $op, 'posts' => $posts));
         } else {
-            $this->layout->nest('content', 'error.thread404');
+            return View::make('error.404');
         }
     }
 
