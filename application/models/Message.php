@@ -14,6 +14,15 @@ class Message extends Eloquent {
         $this->set_attribute('message', trim($message));
     }
 
+    public function set_poster_ip($ip) {
+        $this->set_attribute('poster_ip', ip2long($ip));
+    }
+
+    //getters
+    public function get_poster_ip() {
+        return long2ip($this->get_attribute('poster_ip'));
+    }
+
     //relationships
     public function from_user() {
         return $this->belongs_to('User', 'user_from');

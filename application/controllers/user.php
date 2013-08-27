@@ -302,6 +302,7 @@ class User_Controller extends Base_Controller {
             $new_message = new Message(array(
                 'user_from' => $from_id,
                 'user_to' => $to_id,
+                'poster_ip' => Request::ip(),
                 'message' => $input['post-body']
             ));
             $new_message->save();

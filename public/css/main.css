@@ -2170,6 +2170,19 @@ div.message-row:not(:last-child) {
     border-bottom: 1px solid #ddd;
 }
 
+div#message-view {
+    display: block;
+    padding: 15px 18px;
+
+    div.message-info {
+        float: left;
+
+        img.avatar {
+            margin-right: 10px;
+        }
+    }
+}
+
 
 /* Profile Administration Stuff */
 form#change-bio-form {

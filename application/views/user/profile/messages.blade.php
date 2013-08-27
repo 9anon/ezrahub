@@ -2,7 +2,7 @@
     <div id="messages-header">
         <div class="messages-header-column"><span class="icon-left icon-user"></span> from</div>
         <div class="messages-header-column"><span class="icon-left icon-comment"></span> body</div>
-        <div class="messages-header-column"><span class="icon-left icon-time"></span> time</div>
+        <div class="messages-header-column"><span class="icon-left icon-time"></span> sent</div>
         <div class="clear both"></div>
     </div>
     @if (empty($messages))
