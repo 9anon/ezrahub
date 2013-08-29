@@ -27,9 +27,9 @@
                     <ul class="main-nav">
                         <li class="search-bar">
                             <span class="icon-left icon-search"></span>
-                            <?php echo Form::open('search', 'POST'); ?>
+                            <?php echo Form::open('search', 'GET'); ?>
                                 @include('layout.placeholderfill')
-                                <?php echo Form::text('query', null, array('placeholder' => random_placeholder(), 'id' => 'query')); ?>
+                                <?php echo Form::text('q', null, array('placeholder' => random_placeholder(), 'id' => 'q')); ?>
                             <?php echo Form::close(); ?>
                         </li>
                         <li>

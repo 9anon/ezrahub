@@ -151,7 +151,7 @@ Route::get('/', 'home@index');
 Route::get('users/online', 'home@online_users');
 
 //search
-Route::post('search', 'home@search');
+Route::get('search', 'search@search');
 
 
 /*

@@ -38,19 +38,6 @@ class Home_Controller extends Base_Controller {
         }
     }
 
-    public function action_search() {
-        $query = trim(Input::get('query'));
-        $matches = Thread::where('title', 'LIKE', '%' . $query . '%')->order_by('updated_at', 'desc')->take(Config::get('ezrahub.num_homepage_threads'))->get();
-        Section::inject('title', 'Search for "' . $query . '"');
-        Section::inject('description', 'Ezra Hub is a popular and student-run forum for Cornell University students. Anonymous posting and user accounts are allowed and everything from frats, sororities, classes, drugs, housing and more is discussed. Ezra Hub is not endorsed by Cornell University.');
-        Section::inject('canonical', '<link rel="canonical" href="http://ezrahub.com/search/' . $query . '"/>');
-        $this->layout->nest('content', 'home.searchresults', array('threads' => $matches, 'query' => $query));
-    }
-
-    public function action_online_users() {
-        return View::make('home.onlineusers');
-    }
-
 	public function action_rules() {
 		Section::inject('title', 'Forum rules' );
 		Section::inject('description', 'Ezra Hub has some simple to follow rules, find out what they are to avoid being banned.');
