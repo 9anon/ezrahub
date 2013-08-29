@@ -11,7 +11,7 @@ return array(
     |
     */
 
-    'version_number' => '0.9.1b',
+    'version_number' => '0.9.2b',
     'admin_email' => 'admin@ezrahub.com',
 
 
