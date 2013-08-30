@@ -34,7 +34,7 @@
                 </ul>
             </div>
             <div class="no-sort-header-column"><span class="icon-left icon-align-left"></span> Replies</div>
-            <div class="no-sort-header-column"><span class="icon-left icon-comment"></span> Last post</div>
+            <div class="no-sort-header-column"><span class="icon-left icon-comment"></span> Last Post</div>
             <div class="clear both"></div>
         </div>
         <div id="threads-container">
