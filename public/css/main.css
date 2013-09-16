@@ -573,7 +573,7 @@ div.thread-column {
 
 /* thread indicators */
 div.thread-column.thread-indicators {
-    width: 3.5%;
+    width: 40px;
     font-size: 14px;
     text-align: center;
 

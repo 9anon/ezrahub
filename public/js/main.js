@@ -128,7 +128,7 @@ $(function() {
 
     //size the thread title section so there is no overflow
     var old_width = parseInt($('div.main-section').css('width'), 10);
-    var new_width = old_width - 0.05*old_width - 40;
+    var new_width = old_width - 0.05 * old_width - 40;
     //apply the new width
     $('div.thread-title').css('width', new_width + 'px');
 
@@ -136,7 +136,7 @@ $(function() {
     $(window).resize(function() {
         //work out what the new width will be
         var old_width = parseInt($('div.main-section').css('width'), 10);
-        var new_width = old_width - 0.05*old_width - 40;
+        var new_width = old_width - 0.05 * old_width - 40;
         //apply the new width
         $('div.thread-column.thread-title, div.thread-column.thread-title h3').css('width', new_width + 'px');
     });
