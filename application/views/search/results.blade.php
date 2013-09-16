@@ -8,7 +8,11 @@
             <div class="clear both"></div>
         </div>
         <div id="threads-container" class="search-results-container">
-            @include('home.threads')
+            @if(empty($threads))
+                <p style="padding-left: 18px;">Sorry, no threads match this query. Try another search.</p>
+            @else
+                @include('home.threads')
+            @endif
         </div>
     </div>
 </div>
