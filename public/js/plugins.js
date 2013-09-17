@@ -91,36 +91,6 @@ var intelcutoff = {
     'fifth': 10,
 };
 
-var bbcode = {
-    bold: function(id) {
-        wrapText($("textarea.enhanced"), "[b]", "[/b]", "", "bolded text");
-    },
-    italic: function(id) {
-        wrapText($("textarea.enhanced"), "[i]", "[/i]", "", "italicized text");
-    },
-    heading: function(id) {
-        wrapText($("textarea.enhanced"), "[h]", "[/h]", "", "heading");
-    },
-    link: function(id) {
-        wrapText($("textarea.enhanced"), "[url]", "[/url]", "", "link url");
-    },
-    image: function(id) {
-        wrapText($("textarea.enhanced"), "[img]", "[/img]", "", "image url");
-    },
-    youtube: function(id) {
-        wrapText($("textarea.enhanced"), "[youtube]", "[/youtube]", "", "unique video id");
-    },
-    quote: function(id) {
-        wrapText($("textarea.enhanced"), "[quote]", "[/quote]", "", "quoted text");
-    },
-    list: function(id) {
-        wrapText($("textarea.enhanced"), "[list]", "[/list]", "", "[*] item 1 [*] item 2 etc.");
-    },
-    strikethrough: function(id) {
-        wrapText($("textarea.enhanced"), "[s]", "[/s]", "", "spoiler text");
-    }
-};
-
 //on document ready
 $(document).ready(function () {
     // initialize the rating
@@ -177,33 +147,35 @@ $(document).ready(function () {
     $(document).on('click', 'span.format-icon', function () {
         //sort out which action we are doing
         var action = $(this).data("action");
+        //make sure we only edit the one in the correct scope, not all on the page
+        var textarea = $(this).parent().siblings('textarea.enhanced');
         switch (action) {
             case "bold":
-                bbcode.bold();
+                wrapText(textarea, "[b]", "[/b]", "", "bolded text");
                 break;
             case "italic":
-                bbcode.italic();
+                wrapText(textarea, "[i]", "[/i]", "", "italicized text");
                 break;
             case 'heading':
-                bbcode.heading();
+                wrapText(textarea, "[h]", "[/h]", "", "heading");
                 break;
             case 'link':
-                bbcode.link();
+                wrapText(textarea, "[url]", "[/url]", "", "link url");
                 break;
             case 'image':
-                bbcode.image();
+                wrapText(textarea, "[img]", "[/img]", "", "image url");
                 break;
             case 'youtube':
-                bbcode.youtube();
+                wrapText(textarea, "[youtube]", "[/youtube]", "", "unique video id");
                 break;
             case 'quote':
-                bbcode.quote();
+                wrapText(textarea, "[quote]", "[/quote]", "", "quoted text");
                 break;
             case 'list':
-                bbcode.list();
+                wrapText(textarea, "[list]", "[/list]", "", "[*] item 1 [*] item 2 etc.");
                 break;
             case 'strikethrough':
-                bbcode.strikethrough();
+                wrapText(textarea, "[s]", "[/s]", "", "spoiler text");
                 break;
         }
     });
