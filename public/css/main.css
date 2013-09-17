@@ -1526,9 +1526,12 @@ div.submit-container {
     }
 }
 
-@footer-height: 45px;
+@footer-height: 40px;
 
 footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
     .border-sizing;
     width: 100%;
     height: @footer-height;
