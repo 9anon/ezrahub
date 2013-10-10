@@ -144,7 +144,7 @@ $(function() {
     //hovering over a normal thread
     $('#threads').on({
         mouseenter: function() {
-            $(this).css('background', 'rgba(0, 0, 0, 0.04)').find('span.icon-indicator').css('color', '#777');
+            $(this).css('background', 'rgba(0, 129, 216, 0.04)').find('span.icon-indicator').css('color', '#777');
         },
         mouseleave: function() {
             $(this).css('background', 'transparent').find('span.icon-indicator').css('color', 'transparent');

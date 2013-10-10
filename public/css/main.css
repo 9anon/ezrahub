@@ -59,7 +59,7 @@ body {
     margin: 0px;
     padding: 0px;
     background: #fff;
-    color: #777;
+    color: #444;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.428571429;
@@ -75,7 +75,7 @@ img {
 
 a, a:visited {
     text-decoration: none;
-    color: #3b8bba;
+    color: #008dec;
     outline: 0 !important;
     border: 0 !important;
 }
@@ -151,7 +151,7 @@ header {
     padding: 0 2.5% 0 0;
     height: @header-height;
     line-height: @header-height;
-    background: #b31b1b;
+    background: #a30006;
     color: #ddd;
     font-size: 14px;
     position: relative;
@@ -479,7 +479,7 @@ span.highlight {
     width: 100%;
     padding-left: 65px;
     z-index: +2;
-    background: #b31b1b url('/img/ezra.png') no-repeat 2px 0;
+    background: #a30006 url('/img/ezra.png') no-repeat 2px 0;
     color: #ddd !important;
 }
 
@@ -494,7 +494,7 @@ span.highlight {
     z-index: +2;
     height: 50px;
     line-height: 50px;
-    background: #b31b1b url('/img/ezra.png') no-repeat 2px 0;
+    background: #a30006 url('/img/ezra.png') no-repeat 2px 0;
     color: #ddd !important;
 
     h2 {
@@ -573,7 +573,7 @@ div.thread-column {
 
 /* thread indicators */
 div.thread-column.thread-indicators {
-    width: 40px;
+    width: 55px;
     font-size: 14px;
     text-align: center;
 
@@ -644,7 +644,7 @@ div.thread-column.thread-title {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            color: #777 !important;
+            color: #444 !important;
             width: 100%; /* full width of the thread-title div */
 
             span.thread-title {
@@ -785,7 +785,7 @@ span.post-ago {
             font-weight: bold;
             text-transform: none;
             margin: 0 0 4px 0;
-            color: #666;
+            color: #333;
         }
 
         img.avatar {
@@ -905,7 +905,7 @@ div.post-body {
     }
 
     a {
-        color: #3b8bba !important;
+        color: #008dec !important;
     }
 }
 
@@ -1535,12 +1535,12 @@ footer {
     .border-sizing;
     width: 100%;
     height: @footer-height;
-    padding: 0 18px 0 @sidebar-width + 18px;
+    padding: 0 18px;
     font-size: 13px;
     color: #eee;
-    background: #31353e;
+    background: #111;
     text-transform: lowercase;
-    z-index: +1;
+    z-index: +3;
 
     .footer-col {
         height: @footer-height;
@@ -1560,7 +1560,7 @@ footer {
     }
 
     a {
-        color: #76C8FF !important;
+        color: #008dec !important;
     }
 
     p {

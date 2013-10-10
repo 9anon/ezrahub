@@ -18,8 +18,7 @@
                 <h3>
                     <a class="thread-link" href="/thread/{{ $thread->id }}/{{ $thread->slug }}">
                         <span class="thread-title">{{ $thread->title }}</span>
-                        <span class="post-ago"> {{ PrettyPrint::time($thread->created_at) }}</span>
-                        by
+                        <span class="post-ago"> {{ PrettyPrint::time($thread->created_at) }} by</span>
                         <span class="username">{{ $thread->user->name }}</span>
                     </a>
                 </h3>
