@@ -34,6 +34,7 @@ function random_placeholder() {
     $placeholders[] = 'guaranteed transfer into ILR community college';
     $placeholders[] = 'hottest girl at cornell';
     $placeholders[] = 'tips on how to be ALPHA';
+    $placeholders[] = 'how to clean your headlights';
 
     //pick a random position in the array and store it in num
     $num = rand(0,count($placeholders)-1);
